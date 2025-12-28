@@ -20,8 +20,8 @@ interface Props {
 }
 
 function Header(props: Props) {
-  const { me, proyects,about, technologies, contact } = props.data;
- 
+  const { me, proyects, about, technologies, contact } = props.data;
+
   const [selected, setSelected] = useState("inicio");
 
   return (
@@ -32,18 +32,23 @@ function Header(props: Props) {
             selected === "inicio" ? "text-Theme" : ""
           }`}
           href="#Home"
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             setSelected("inicio");
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
           }}
         >
           <div className="flex justify-center">
             <IconUser className="h-10 sm:h-14 w-10 sm:w-14 flex justify-center items-center  group-hover:stroke-Theme" />
           </div>
           <span
-            className={`flex justify-center font-bold transition-all duration-300 ${
+            className={`flex justify-center font-bold transition-all duration-300 text-sm ${
               selected === "inicio"
                 ? "text-Theme"
-                : "text-transparent group-hover:text-Theme"
+                : "text-transparent group-hover:text-Theme "
             }`}
           >
             {me}
@@ -62,14 +67,15 @@ function Header(props: Props) {
             <IconAddressBook className="h-10 sm:h-14 w-10 sm:w-14 flex justify-center items-center  group-hover:stroke-Theme" />
           </div>
           <span
-            className={`flex justify-center font-bold transition-all duration-300 ${
+            className={`flex justify-center font-bold transition-all duration-300 text-sm ${
               selected === "About"
                 ? "text-Theme"
                 : "text-transparent group-hover:text-Theme"
             }`}
           >
-          {about}
-          </span>        </a>
+            {about}
+          </span>{" "}
+        </a>
       </div>
       <div className="grid items-center justify-center">
         <a
@@ -88,7 +94,7 @@ function Header(props: Props) {
             />
           </div>
           <span
-            className={`flex justify-center font-bold transition-all duration-300 ${
+            className={`flex justify-center font-bold transition-all duration-300 text-sm ${
               selected === "proyectos"
                 ? "text-Theme"
                 : "text-transparent group-hover:text-Theme"
@@ -110,7 +116,7 @@ function Header(props: Props) {
             <IconTools className="h-10 sm:h-14 w-10 sm:w-14 flex justify-center items-center  group-hover:stroke-Theme" />
           </div>
           <span
-            className={`flex justify-center font-bold transition-all duration-300 ${
+            className={`flex justify-center font-bold transition-all duration-300 text-sm ${
               selected === "tecnologias"
                 ? "text-Theme"
                 : "text-transparent group-hover:text-Theme"
@@ -132,7 +138,7 @@ function Header(props: Props) {
             <IconMailFast className="h-10 sm:h-14 w-10 sm:w-14 flex justify-center item-center  group-hover:stroke-Theme" />
           </div>
           <span
-            className={`flex justify-center font-bold transition-all duration-300  ${
+            className={`flex justify-center font-bold transition-all duration-300 text-sm  ${
               selected === "contactos"
                 ? "text-Theme"
                 : "text-transparent group-hover:text-Theme"

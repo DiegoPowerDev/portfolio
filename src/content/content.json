@@ -39,7 +39,7 @@
     },
     "second": {
       "seccion": "Edad",
-      "detail": "31 años"
+      "detail": "32 años"
     },
     "third": {
       "seccion": "Nacionalidad",
@@ -52,7 +52,7 @@
     "links": {
       "github": {
         "title": "Github",
-        "detail": "https://github.com/DiegoPower48"
+        "detail": "https://github.com/DiegoPowerDev"
       },
       "linkedin": {
         "title": "Linkedin",
@@ -62,8 +62,8 @@
   },
   "Detail": {
     "title": "Quien soy",
-    "about": "Soy un desarrollador web y móvil enfocado en crear aplicaciones de alto rendimiento que brinden las mejores experiencias de usuario. Mi experiencia se basa en el uso de las bibliotecas React y React Native para desarrollar aplicaciones responsivas, de carga rápida e intuitivas, adaptadas tanto para la web como para plataformas móviles.",
-    "about2": "Al aprovechar un conjunto diverso de herramientas y frameworks modernos, optimizo cada proyecto para reducir el tiempo de desarrollo sin comprometer la calidad."
+    "about": "Soy un desarrollador web y móvil enfocado en crear aplicaciones de alto rendimiento que brinden las mejores experiencias de usuario. Mi experiencia se basa en el uso de frameworks como NextJs y Expo para desarrollar aplicaciones responsivas, de carga rápida y adaptadas tanto para la web como para plataformas móviles.",
+    "about2": "Al aprovechar un conjunto diverso de herramientas y frameworks modernos, optimizo cada proyecto para reducir el tiempo de desarrollo."
   },
 
   "Proyects": {

@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 interface ItemProps {
   data: {
     url: string;
@@ -11,17 +13,43 @@ export default function Item(props: ItemProps) {
 
   return (
     <div className="w-full flex items-center justify-center">
-      <span
-        className={`grid w-20 lg:w-24 justify-center hover:bg-Theme hover:scale-105 rounded-xl p-1 ${style} grid-rows-[auto,auto]`}
+      <motion.span
+        className={`grid w-20 lg:w-24 justify-center rounded-xl p-1 ${style} grid-rows-[auto,auto] cursor-pointer`}
+        whileHover={{
+          scale: 1.1,
+          backgroundColor: "var(--theme)",
+          transition: { duration: 0.2 },
+        }}
+        whileTap={{ scale: 0.95 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
       >
-        <div className="flex w-full justify-center">
-          <img className="h-12 w-12 lg:h-16 lg:w-16" src={url} alt={alt} />
-        </div>
+        <motion.div
+          className="flex w-full justify-center"
+          whileHover={{
+            rotate: [0, -10, 10, -10, 0],
+            transition: { duration: 0.5 },
+          }}
+        >
+          <motion.img
+            className="h-12 w-12 lg:h-16 lg:w-16"
+            src={url}
+            alt={alt}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.2 }}
+          />
+        </motion.div>
 
-        <div className="h-full grid justify-center lg:font-bold text-xs text-pretty">
+        <motion.div
+          className="h-full grid justify-center lg:font-bold text-xs text-pretty text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.1, duration: 0.3 }}
+        >
           {alt}
-        </div>
-      </span>
+        </motion.div>
+      </motion.span>
     </div>
   );
 }
