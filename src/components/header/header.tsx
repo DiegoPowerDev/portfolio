@@ -25,8 +25,8 @@ function Header(props: Props) {
   const [selected, setSelected] = useState("inicio");
 
   return (
-    <div className="w-full  lg:w-auto border-textTheme border-b-2 lg:border-0 lg:bg-transparent lg:mb-0 grid lg:grid-cols-1 lg:grid-rows-auto grid-cols-5 grid-rows-1 lg:gap-4 items-center content-center">
-      <div className="grid items-center justify-center ">
+    <div className="w-32 h-full lg:bg-transparent flex lg:flex-col lg:gap-4 items-center justify-center">
+      <div className="flex h-full w-full items-center justify-center">
         <a
           className={`group grid grid-rows-2 items-center justify-center h-32 w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105 hover:lg:shadow-[0_0_20px_1px_var(--theme)] hover:lg:border-Theme ${
             selected === "inicio" ? "text-Theme" : ""
@@ -55,7 +55,7 @@ function Header(props: Props) {
           </span>
         </a>
       </div>
-      <div className="grid items-center justify-center">
+      <div className="flex h-full w-full items-center justify-center">
         <a
           className={`group grid grid-rows-2 items-center justify-center h-32 w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105 hover:lg:shadow-[0_0_20px_1px_var(--theme)] hover:lg:border-Theme ${
             selected === "About" ? "border-Theme text-Theme" : ""
@@ -77,7 +77,7 @@ function Header(props: Props) {
           </span>{" "}
         </a>
       </div>
-      <div className="grid items-center justify-center">
+      <div className="flex h-full w-full items-center justify-center">
         <a
           className={`group grid grid-rows-2 items-center justify-center h-32 w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105 hover:lg:shadow-[0_0_20px_1px_var(--theme)] hover:lg:border-Theme ${
             selected === "proyectos" ? "text-Theme" : ""
@@ -104,7 +104,7 @@ function Header(props: Props) {
           </span>
         </a>
       </div>
-      <div className="grid items-center justify-center">
+      <div className="flex h-full w-full items-center justify-center">
         <a
           className={`group grid grid-rows-2 items-center justify-center h-32 w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105 hover:lg:shadow-[0_0_20px_1px_var(--theme)] hover:lg:border-Theme ${
             selected === "tecnologias" ? "text-Theme" : ""
@@ -126,7 +126,7 @@ function Header(props: Props) {
           </span>
         </a>
       </div>
-      <div className="grid items-center justify-center">
+      <div className="flex h-full w-full items-center justify-center">
         <a
           className={`group grid grid-rows-2 items-center justify-center h-32 w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105 hover:lg:shadow-[0_0_20px_1px_var(--theme)] hover:lg:border-Theme ${
             selected === "contactos" ? "text-Theme" : ""

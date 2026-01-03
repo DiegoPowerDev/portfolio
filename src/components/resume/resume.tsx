@@ -63,7 +63,7 @@ function Resume(props: Props) {
           <div className="w-full grid  justify-center ">
             <a
               href={links.github.detail}
-              className=" hover:scale-125 transition-all group"
+              className=" hover:scale-125 transition-all group duration-300"
             >
               <IconBrandGithubFilled className="h-16 w-16  group-hover:fill-Hover" />
               <div className="text-center group-hover:text-Hover">
@@ -74,7 +74,7 @@ function Resume(props: Props) {
           <div className="w-full grid  justify-center ">
             <a
               href={links.linkedin.detail}
-              className="hover:scale-125 transition-all group"
+              className="hover:scale-125 transition-all group duration-300"
             >
               <IconBrandLinkedinFilled className="h-16 w-16  group-hover:fill-Hover" />
               <div className="text-center group-hover:text-Hover">

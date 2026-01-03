@@ -11,6 +11,7 @@ import content from "@/content/content.json";
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Toaster } from "react-hot-toast";
+import { cn } from "@/lib/utils";
 
 // Componente de sección animada
 const AnimatedSection = ({
@@ -29,7 +30,7 @@ const AnimatedSection = ({
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 150 }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      className="h-full"
+      className="h-full w-full px-8 flex flex-col"
     >
       {children}
     </motion.div>
@@ -52,7 +53,7 @@ export default function Home() {
 
   return (
     <motion.div
-      className={`max-w-screen grid lg:grid-cols-[1fr,4fr] grid-cols-1 px-4 lg:pr-10 lg:pl-0 relative overflow-hidden bg-black`}
+      className={`w-full h-full flex flex-col md:flex-row px-4  relative overflow-x-hidden bg-black`}
     >
       {/* Gradiente base */}
       <div
@@ -66,7 +67,7 @@ export default function Home() {
 
       {/* Efecto shimmer deslizante */}
       <motion.div
-        className="absolute inset-0 pointer-events-none hidden lg:block"
+        className="absolute w-screen inset-0 pointer-events-none hidden lg:block"
         style={{
           background:
             "linear-gradient(90deg, transparent 0%, var(--theme) 50%, transparent 100%)",
@@ -77,22 +78,26 @@ export default function Home() {
           opacity: [0, 0.3, 0],
         }}
         transition={{
-          duration: 6,
+          duration: 3,
           repeat: Infinity,
           ease: "easeInOut",
-          repeatDelay: 2,
+          repeatDelay: 1,
         }}
       />
-      <div className="w-full bg-Background lg:bg-transparent flex items-center justify-center z-50 lg:w-auto h-auto lg:h-screen sticky top-0 ">
+      <div className="md:w-48 w-full bg-Background lg:bg-transparent flex items-center justify-center z-50  h-full sticky ">
         <Header data={content.Header} />
       </div>
-      <div className="w-full h-full grid grid-cols-1 grid-rows-auto lg:gap-20 gap-32 pb-10 lg:py-20 ">
+      <div
+        className={cn(
+          "w-full scrollContainer h-full flex flex-col lg:gap-20 gap-32 pb-10 lg:py-20 overflow-y-auto"
+        )}
+      >
         {isMobile ? <div id="Home"></div> : ""}
 
         {/* Sección Resume */}
         <AnimatedSection delay={0}>
-          {isMobile ? "" : <div id="Home"></div>}
-          <div className="h-full bg-theme  p-10 rounded-3xl shadow-[0_0_20px_1px_var(--theme)]">
+          {isMobile && <div id="Home"></div>}
+          <div className="h-full w-full bg-theme  p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Resume data={content.Resume} />
           </div>
           {isMobile ? <div id="Detail"></div> : ""}
@@ -100,8 +105,8 @@ export default function Home() {
 
         {/* Sección Detalle */}
         <AnimatedSection delay={0.1}>
-          {isMobile ? "" : <div id="Detail"></div>}
-          <div className="h-full bg-theme  p-10  rounded-3xl  shadow-[0_0_20px_1px_var(--theme)]">
+          {isMobile && <div id="Detail"></div>}
+          <div className="h-full w-full bg-theme  p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Detalle data={content.Detail} />
           </div>
           {isMobile ? <div id="Proyectos"></div> : ""}
@@ -109,8 +114,8 @@ export default function Home() {
 
         {/* Sección Proyectos */}
         <AnimatedSection delay={0.1}>
-          {isMobile ? "" : <div id="Proyectos"></div>}
-          <div className="h-full bg-theme  p-10 rounded-3xl  shadow-[0_0_20px_1px_var(--theme)]">
+          {isMobile && <div id="Proyectos"></div>}
+          <div className="h-full w-full bg-theme  p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Proyectos data={content.Proyects} />
           </div>
           {isMobile ? <div id="Tecnologias"></div> : ""}
@@ -118,8 +123,8 @@ export default function Home() {
 
         {/* Sección Tecnologías */}
         <AnimatedSection delay={0.1}>
-          {isMobile ? "" : <div id="Tecnologias"></div>}
-          <div className="h-full bg-theme  p-10 rounded-3xl  shadow-[0_0_20px_1px_var(--theme)]">
+          {isMobile && <div id="Tecnologias"></div>}
+          <div className="h-full w-full bg-theme  p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Tecnologias data={content.Technologies} />
           </div>
           {isMobile ? <div id="Contactos"></div> : ""}
@@ -127,8 +132,8 @@ export default function Home() {
 
         {/* Sección Comentarios */}
         <AnimatedSection delay={0.1}>
-          {isMobile ? "" : <div id="Contactos"></div>}
-          <div className="h-full bg-theme  p-10 rounded-3xl  shadow-[0_0_20px_1px_var(--theme)]">
+          {isMobile && <div id="Contactos"></div>}
+          <div className="h-full bg-theme  p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Comentarios data={content.Comments} />
           </div>
         </AnimatedSection>

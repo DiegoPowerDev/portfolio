@@ -12,9 +12,9 @@ export default function Item(props: ItemProps) {
   const { style, url, alt } = props.data;
 
   return (
-    <div className="w-full flex items-center justify-center">
+    <div className="w-full flex h-full items-center justify-center">
       <motion.span
-        className={`grid w-20 lg:w-24 justify-center rounded-xl p-1 ${style} grid-rows-[auto,auto] cursor-pointer`}
+        className={`grid h-full w-20 lg:w-24 justify-center rounded-xl p-1 ${style} grid-rows-[auto,auto] cursor-pointer`}
         whileHover={{
           scale: 1.1,
           backgroundColor: "var(--theme)",

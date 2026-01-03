@@ -45,7 +45,7 @@ const sectionVariants = {
   },
   visible: {
     opacity: 1,
-    height: "auto",
+    height: "fit",
     transition: {
       duration: 0.4,
       when: "beforeChildren",
@@ -59,7 +59,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.3 },
+    transition: { duration: 1 },
   },
 };
 
@@ -73,19 +73,19 @@ const TechCategory = ({
 }) => (
   <motion.div
     variants={itemVariants}
-    className="w-full grid grid-rows-auto border-2 border-Theme rounded-xl shadow-[0px_0px_10px_0px_#10B981] p-5"
+    className="w-full h-full flex flex-col border-2 border-Theme rounded-xl shadow-[0px_0px_10px_0px_#10B981] p-5"
   >
     <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="text-textTheme flex justify-center text-3xl font-bold mb-4"
+      className="text-textTheme h-full flex justify-center text-3xl font-bold mb-4"
     >
       {title}
     </motion.div>
 
     <motion.div
-      className="w-full grid grid-rows-auto grid-cols-2 sm:grid-cols-3 md:grid-cols-5 justify-center items-center gap-3"
+      className="w-full h-full grid grid-flow-row grid-cols-2 sm:grid-cols-3 md:grid-cols-5 justify-center items-center gap-3"
       initial="hidden"
       animate="visible"
       variants={{
@@ -98,6 +98,7 @@ const TechCategory = ({
     >
       {technologies.map((element, i) => (
         <motion.div
+          className="w-full h-full flex"
           key={i}
           variants={{
             hidden: { opacity: 0, scale: 0.8 },
@@ -134,10 +135,10 @@ function Tecnologias(props: Props) {
   };
 
   return (
-    <div className="w-full h-full grid grid-cols-1 grid-rows-[auto,auto,auto] gap-4">
+    <div className="w-full  flex flex-col gap-4">
       <p className="font-bold text-Theme text-4xl">{title}:</p>
 
-      <div className="grid grid-rows-1 w-full overflow-hidden">
+      <div className="flex h-full w-full ">
         <AnimatePresence mode="wait">
           {mode ? (
             <motion.div
@@ -146,7 +147,7 @@ function Tecnologias(props: Props) {
               animate="visible"
               exit="hidden"
               variants={sectionVariants}
-              className="grid grid-rows-[auto,auto,auto,auto] gap-y-10"
+              className="flex flex-col h-full w-full gap-y-10"
             >
               <TechCategory
                 title={frontend.title}
@@ -172,7 +173,7 @@ function Tecnologias(props: Props) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.7 }}
-              className="grid overflow-hidden w-full gap-x-5"
+              className="flex h-full flex-col w-full gap-x-5"
               style={{
                 WebkitMaskImage:
                   "linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0))",
@@ -202,7 +203,7 @@ function Tecnologias(props: Props) {
       </div>
 
       <motion.div
-        className="h-10 grid items-center justify-center bg-Theme hover:bg-Hover rounded-xl cursor-pointer"
+        className="h-10 flex items-center justify-center bg-Theme hover:bg-Hover rounded-xl cursor-pointer"
         onClick={changeModal}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
