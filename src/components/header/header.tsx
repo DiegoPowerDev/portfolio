@@ -25,30 +25,23 @@ function Header(props: Props) {
   const [selected, setSelected] = useState("inicio");
 
   return (
-    <div className="w-32 h-full lg:bg-transparent flex lg:flex-col lg:gap-4 items-center justify-center">
+    <div className="md:w-32 h-full pt-4 md:pt-0 md:bg-transparent grid grid-cols-5 grid-rows-1 w-full md:flex md:flex-col md:gap-4 items-center justify-center">
       <div className="flex h-full w-full items-center justify-center">
         <a
-          className={`group grid grid-rows-2 items-center justify-center h-32 w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105 hover:lg:shadow-[0_0_20px_1px_var(--theme)] hover:lg:border-Theme ${
+          className={`group grid grid-rows-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
             selected === "inicio" ? "text-Theme" : ""
           }`}
-          href="#Home"
-          onClick={(e) => {
-            e.preventDefault();
-            setSelected("inicio");
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-          }}
+          href="#inicio"
+          onClick={() => setSelected("inicio")}
         >
           <div className="flex justify-center">
-            <IconUser className="h-10 sm:h-14 w-10 sm:w-14 flex justify-center items-center  group-hover:stroke-Theme" />
+            <IconUser className="h-10 sm:h-14 w-10 sm:w-14 flex justify-center items-center group-hover:stroke-Theme" />
           </div>
           <span
-            className={`flex justify-center font-bold transition-all duration-300 text-sm ${
+            className={` text-center font-bold transition-all duration-300 text-sm ${
               selected === "inicio"
                 ? "text-Theme"
-                : "text-transparent group-hover:text-Theme "
+                : "text-transparent group-hover:text-Theme"
             }`}
           >
             {me}
@@ -57,7 +50,7 @@ function Header(props: Props) {
       </div>
       <div className="flex h-full w-full items-center justify-center">
         <a
-          className={`group grid grid-rows-2 items-center justify-center h-32 w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105 hover:lg:shadow-[0_0_20px_1px_var(--theme)] hover:lg:border-Theme ${
+          className={`group grid grid-rows-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
             selected === "About" ? "border-Theme text-Theme" : ""
           }`}
           href="#Detail"
@@ -67,19 +60,19 @@ function Header(props: Props) {
             <IconAddressBook className="h-10 sm:h-14 w-10 sm:w-14 flex justify-center items-center  group-hover:stroke-Theme" />
           </div>
           <span
-            className={`flex justify-center font-bold transition-all duration-300 text-sm ${
+            className={`font-bold text-center transition-all duration-300 text-sm ${
               selected === "About"
                 ? "text-Theme"
                 : "text-transparent group-hover:text-Theme"
             }`}
           >
             {about}
-          </span>{" "}
+          </span>
         </a>
       </div>
       <div className="flex h-full w-full items-center justify-center">
         <a
-          className={`group grid grid-rows-2 items-center justify-center h-32 w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105 hover:lg:shadow-[0_0_20px_1px_var(--theme)] hover:lg:border-Theme ${
+          className={`group grid grid-rows-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
             selected === "proyectos" ? "text-Theme" : ""
           }`}
           href="#Proyectos"
@@ -94,7 +87,7 @@ function Header(props: Props) {
             />
           </div>
           <span
-            className={`flex justify-center font-bold transition-all duration-300 text-sm ${
+            className={` text-center font-bold transition-all duration-300 text-sm ${
               selected === "proyectos"
                 ? "text-Theme"
                 : "text-transparent group-hover:text-Theme"
@@ -106,7 +99,7 @@ function Header(props: Props) {
       </div>
       <div className="flex h-full w-full items-center justify-center">
         <a
-          className={`group grid grid-rows-2 items-center justify-center h-32 w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105 hover:lg:shadow-[0_0_20px_1px_var(--theme)] hover:lg:border-Theme ${
+          className={`group grid grid-rows-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
             selected === "tecnologias" ? "text-Theme" : ""
           }`}
           href="#Tecnologias"
@@ -116,7 +109,7 @@ function Header(props: Props) {
             <IconTools className="h-10 sm:h-14 w-10 sm:w-14 flex justify-center items-center  group-hover:stroke-Theme" />
           </div>
           <span
-            className={`flex justify-center font-bold transition-all duration-300 text-sm ${
+            className={` text-center font-bold transition-all duration-300 text-sm ${
               selected === "tecnologias"
                 ? "text-Theme"
                 : "text-transparent group-hover:text-Theme"
@@ -128,7 +121,7 @@ function Header(props: Props) {
       </div>
       <div className="flex h-full w-full items-center justify-center">
         <a
-          className={`group grid grid-rows-2 items-center justify-center h-32 w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105 hover:lg:shadow-[0_0_20px_1px_var(--theme)] hover:lg:border-Theme ${
+          className={`group grid grid-rows-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
             selected === "contactos" ? "text-Theme" : ""
           }`}
           href="#Contactos"
@@ -138,7 +131,7 @@ function Header(props: Props) {
             <IconMailFast className="h-10 sm:h-14 w-10 sm:w-14 flex justify-center item-center  group-hover:stroke-Theme" />
           </div>
           <span
-            className={`flex justify-center font-bold transition-all duration-300 text-sm  ${
+            className={` text-center font-bold transition-all duration-300 text-sm  ${
               selected === "contactos"
                 ? "text-Theme"
                 : "text-transparent group-hover:text-Theme"

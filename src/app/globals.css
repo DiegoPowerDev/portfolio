@@ -31,33 +31,6 @@ html {
 h1 {
   font-family: var(--font-montserrat);
 }
-/* Coments*/
-.commentsLabel {
-  transition: 0.2s ease;
-}
-
-.formulario:focus,
-.formulario:valid {
-  box-shadow: 1px 1px 10px 1px var(--hover);
-  border: 3px solid var(--theme);
-}
-
-.textarea:focus,
-.textarea:valid {
-  box-shadow: 1px 1px 10px 1px var(--hover);
-  border: 3px solid var(--theme);
-}
-
-.formulario:focus + .commentsLabel,
-.formulario:valid + .commentsLabel {
-  transform: translate(-5px, -40px) scale(0.9);
-  color: var(--theme);
-}
-.textarea:valid + .commentsLabel,
-.textarea:focus + .commentsLabel {
-  transform: translate(-20px, -40px) scale(0.9);
-  color: var(--theme);
-}
 
 /* Proyects*/
 .cajaProyectos {

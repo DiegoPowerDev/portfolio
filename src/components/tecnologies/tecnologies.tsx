@@ -45,7 +45,7 @@ const sectionVariants = {
   },
   visible: {
     opacity: 1,
-    height: "fit",
+    height: "auto",
     transition: {
       duration: 0.4,
       when: "beforeChildren",
@@ -79,7 +79,7 @@ const TechCategory = ({
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="text-textTheme h-full flex justify-center text-3xl font-bold mb-4"
+      className="text-textTheme h-full text-center  text-2xl md:text-4xl  font-bold mb-4"
     >
       {title}
     </motion.div>
@@ -136,7 +136,9 @@ function Tecnologias(props: Props) {
 
   return (
     <div className="w-full  flex flex-col gap-4">
-      <p className="font-bold text-Theme text-4xl">{title}:</p>
+      <p className="font-bold text-Theme text-2xl md:text-4xl text-center md:text-start">
+        {title}
+      </p>
 
       <div className="flex h-full w-full ">
         <AnimatePresence mode="wait">
