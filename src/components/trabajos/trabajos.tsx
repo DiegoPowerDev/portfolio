@@ -76,7 +76,7 @@ export default function Trabajos(props: Props) {
         <p className="w-full font-bold text-Theme text-2xl md:text-4xl text-center md:text-start mb-10">
           {title}
         </p>
-        <div className="grid grid-cols-2 gap-8 w-full h-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full h-full">
           {trabajos.map((e, i) => (
             <Trabajo key={i} {...e} />
           ))}
