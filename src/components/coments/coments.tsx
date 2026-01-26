@@ -50,7 +50,7 @@ function Comentarios(props: Props) {
         {
           loading: "⏳⏳  ENVIANDO COMENTARIO......",
           success: "GRACIAS POR EL COMENTARIO!!!!🚀",
-          error: (err: any) => `Error: ${err.message}`,
+          error: (err: { message: string }) => `Error: ${err.message}`,
         },
       )
       .then(() => {
