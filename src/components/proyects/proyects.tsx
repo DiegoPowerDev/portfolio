@@ -20,10 +20,10 @@ function Proyectos(props: Props) {
   const { web } = props.data;
 
   return (
-    <div className="h-full w-full flex flex-col gap-4  items-center justify-center content-center ">
-      <div className="font-bold text-Theme text-2xl md:text-4xl pb-7">
+    <div className="h-full w-full flex flex-col gap-8  items-center justify-center content-center ">
+      <p className="font-bold w-full text-Theme text-2xl md:text-4xl text-center md:text-start">
         {web.title}
-      </div>
+      </p>
       <div className="h-full w-full grid md:grid-cols-2 grid-rows-auto gap-8 md:gap-y-12">
         {web.proyects.map((element, index: number) => (
           <Products

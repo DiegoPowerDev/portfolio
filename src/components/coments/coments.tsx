@@ -23,7 +23,7 @@ const inputVariants = {
 
 const labelVariants = {
   float: { y: -40, x: -5, color: "var(--theme)" },
-  idle: { y: 0, x: 0, color: "#fafafa70 " }, // Color gris base
+  idle: { y: 0, x: 0, color: "gray" }, // Color gris base
 };
 function Comentarios(props: Props) {
   const { title, name, email, text } = props.data;

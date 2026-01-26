@@ -12,6 +12,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 import { cn } from "@/lib/utils";
+import Trabajos from "@/components/trabajos/trabajos";
 
 // Componente de sección animada
 const AnimatedSection = ({
@@ -81,7 +82,7 @@ export default function Home() {
       </div>
       <div
         className={cn(
-          "w-full scrollContainer gap-20 h-full flex flex-col pb-20 md:py-20 items-center overflow-y-auto  overflow-x-hidden",
+          "scrollContainer w-full gap-20 h-full flex flex-col pb-20 md:py-20 items-center overflow-y-auto  overflow-x-hidden",
         )}
       >
         {isMobile ? <div id="Home"></div> : ""}
@@ -90,7 +91,7 @@ export default function Home() {
           {isMobile && <div id="Home"></div>}
           <div
             id="inicio"
-            className="h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]"
+            className="  h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]"
           >
             <Resume data={content.Resume} />
           </div>
@@ -107,6 +108,17 @@ export default function Home() {
             <Detalle data={content.Detail} />
           </div>
           {isMobile ? <div id="Proyectos"></div> : ""}
+        </AnimatedSection>
+
+        <AnimatedSection delay={0}>
+          {isMobile && <div id="Home"></div>}
+          <div
+            id="inicio"
+            className="  h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]"
+          >
+            <Trabajos data={content.Trabajos} />
+          </div>
+          {isMobile ? <div id="Detail"></div> : ""}
         </AnimatedSection>
 
         {/* Sección Proyectos */}

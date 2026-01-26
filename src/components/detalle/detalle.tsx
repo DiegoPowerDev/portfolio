@@ -11,7 +11,9 @@ function Detalle(props: Props) {
 
   return (
     <div className="h-full w-full flex flex-col gap-4 items-center md:gap-8 ">
-      <p className="font-bold text-Theme text-2xl md:text-4xl">{title}</p>
+      <p className="font-bold w-full text-Theme text-2xl md:text-4xl text-center md:text-start">
+        {title}
+      </p>
       <p className="text-sm md:text-md">{about}</p>
       <p className="text-sm md:text-md">{about2}</p>
     </div>

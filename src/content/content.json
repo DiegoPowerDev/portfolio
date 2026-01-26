@@ -65,6 +65,26 @@
     "about": "Soy un desarrollador web y móvil enfocado en crear aplicaciones de alto rendimiento que brinden las mejores experiencias de usuario. Mi experiencia se basa en el uso de frameworks como NextJs y Expo para desarrollar aplicaciones responsivas, de carga rápida y adaptadas tanto para la web como para plataformas móviles.",
     "about2": "Al aprovechar un conjunto diverso de herramientas y frameworks modernos, optimizo cada proyecto para reducir el tiempo de desarrollo."
   },
+  "Trabajos": {
+    "title": "Trabajos realizados",
+    "trabajos": [
+      {
+        "nombre": "Vidmont Villa",
+        "link": "https://bidmontvilla.com",
+        "imagenes": ["/bidmontvilla.webp", "/bidmontvilla2.webp"]
+      },
+      {
+        "nombre": "Bantel Perú",
+        "link": "https://bantelperu.com",
+        "imagenes": ["/bantelperu.webp", "/bantelperu2.webp"]
+      },
+      {
+        "nombre": "Led Neon Publicidad",
+        "link": "https://ledneonpublicidad.com",
+        "imagenes": ["/ledneonpublicidad.webp", "/ledneonpublicidad2.webp"]
+      }
+    ]
+  },
 
   "Proyects": {
     "web": {

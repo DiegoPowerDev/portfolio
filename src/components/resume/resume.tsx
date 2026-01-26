@@ -40,8 +40,8 @@ function Resume(props: Props) {
   return (
     <div className="h-full w-full grid grid-rows-[auto,auto] grid-cols-1 md:grid-rows-1 md:grid-cols-[3fr,4fr] items-center justify-center">
       <div className="h-full gap-2 w-full grid grid-rows-[3fr,2fr,2fr] items-center justify-center p-5 ">
-        <div className="h-full grid grid-rows-[2fr,1fr] gap-2 md:gap-7 font-bold items-center">
-          <p className="text-3xl  md:text-6xl text-center uppercase">
+        <div className="h-full w-full grid grid-rows-[2fr,1fr] gap-2 md:gap-7 font-bold items-center">
+          <p className="font-bold w-full text-Theme text-2xl md:text-4xl text-center md:text-start">
             {first.name}
           </p>
           <p className=" md:text-xl text-center text-Theme">{first.work}</p>

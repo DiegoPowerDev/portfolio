@@ -42,7 +42,7 @@ export default function RootLayout({
         className={`${geistSans.variable} 
           ${geistMono.variable} 
           ${roboto.variable} 
-          ${montserrat.variable} antialiased w-screen h-screen`}
+          ${montserrat.variable} antialiased w-screen h-screen flex flex-col`}
       >
         {children}
       </body>
