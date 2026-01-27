@@ -13,6 +13,7 @@ import { motion, useInView } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 import { cn } from "@/lib/utils";
 import Trabajos from "@/components/trabajos/trabajos";
+import Caracteristicas from "@/components/caracteristicas/caracteristicas";
 
 // Componente de sección animada
 const AnimatedSection = ({
@@ -117,6 +118,17 @@ export default function Home() {
             className="  h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]"
           >
             <Trabajos data={content.Trabajos} />
+          </div>
+          {isMobile ? <div id="Detail"></div> : ""}
+        </AnimatedSection>
+
+        <AnimatedSection delay={0}>
+          {isMobile && <div id="Home"></div>}
+          <div
+            id="inicio"
+            className="  h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]"
+          >
+            <Caracteristicas data={content.Caracteristicas} />
           </div>
           {isMobile ? <div id="Detail"></div> : ""}
         </AnimatedSection>

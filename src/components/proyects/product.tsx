@@ -13,23 +13,23 @@ export default function Products(props: Props) {
 
   return (
     <Link
-      className={`cajaProyectos h-64 w-full grid items-center justify-center `}
+      className={`cajaProyectos h-64 w-full flex items-center justify-center`}
       href={direccion}
       target="_blank"
     >
-      <div className={`cards h-full w-48 sm:w-52 md:w-72`}>
+      <div className={`cards flex flex-col h-full w-full`}>
         <div
-          className={`page1 h-64 w-full grid grid-cols-1 grid-rows-[1fr,5fr] p-2 shadow-[0_0_10px_5px_var(--theme)] `}
+          className={`page1 h-full w-full flex flex-col gap-2 p-2 shadow-[0_0_10px_5px_var(--theme)]`}
         >
-          <p className="h-full text-md sm:text-2xl flex justify-center text-center">
+          <p className="text-md sm:text-2xl flex justify-center text-center shrink-0">
             {nombre}
           </p>
 
-          <div className="w-full grid items-center justify-center">
+          <div className="flex-1 min-h-0 flex items-center justify-center">
             <img
               src={imagen}
-              className="sm:h-48 h-52 w-48 grid items-center justify-center"
-              alt="github-icon"
+              className="max-w-full max-h-full object-contain rounded-xl"
+              alt={nombre}
             />
           </div>
         </div>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { IconExternalLink, IconWindow } from "@tabler/icons-react";
 
 interface trabajo {
   nombre: string;
@@ -33,7 +34,7 @@ function Trabajo({ imagenes, nombre, link }: trabajo) {
 
   const variants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 150 : -150, // Un poco más de desplazamiento para que se vea el flujo
+      x: direction > 0 ? 150 : -150,
       opacity: 0,
     }),
     center: {
@@ -48,13 +49,13 @@ function Trabajo({ imagenes, nombre, link }: trabajo) {
 
   return (
     <div className="relative w-full h-[350px] overflow-hidden rounded-3xl border-2 border-Hover bg-black">
-      {/* Título - Z-INDEX ALTO para que no interfiera con el drag */}
       <Link href={link} target="_blank">
-        <div className="w-full text-center p-4 font-bold text-Theme z-30 pointer-events-none">
-          {nombre}
+        <div className="w-full flex items-center justify-center p-4 font-bold text-Theme z-30 pointer-events-none gap-2">
+          {nombre} <IconExternalLink />
         </div>
       </Link>
-      <div className="h-full w-full">
+
+      <div className="relative h-[250px] w-full overflow-hidden">
         <AnimatePresence mode="popLayout" custom={direction}>
           <motion.div
             key={index}
@@ -64,10 +65,9 @@ function Trabajo({ imagenes, nombre, link }: trabajo) {
             animate="center"
             exit="exit"
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            // --- CONFIGURACIÓN DE DRAG ---
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.7} // Más elástico para que se sienta que lo mueves
+            dragElastic={0.7}
             onDragEnd={(e, { offset }) => {
               const swipeThreshold = 50;
               if (offset.x < -swipeThreshold) {
@@ -76,32 +76,34 @@ function Trabajo({ imagenes, nombre, link }: trabajo) {
                 cambiarImagen(-1);
               }
             }}
-            className="h-[200px] inset-0 cursor-grab active:cursor-grabbing z-10"
+            className="absolute inset-0 cursor-grab active:cursor-grabbing"
           >
-            <Image
-              src={imagenes[index]}
-              alt={nombre}
-              fill
-              className="h-full object-contain pointer-events-none select-none p-4"
-              priority={index === 0}
-            />
+            <div className="relative w-full h-full p-4">
+              <Image
+                src={imagenes[index]}
+                alt={nombre}
+                fill
+                className="object-contain pointer-events-none select-none"
+                priority={index === 0}
+              />
+            </div>
           </motion.div>
         </AnimatePresence>
-        {/* Indicadores - Z-INDEX ALTO para poder clickearlos */}
-        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-30">
-          {imagenes.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                const dir = i > index ? 1 : -1;
-                setIndex([i, dir]);
-              }}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === i ? "bg-Theme w-6" : "bg-white/50 w-2"
-              }`}
-            />
-          ))}
-        </div>
+      </div>
+
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+        {imagenes.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => {
+              const dir = i > index ? 1 : -1;
+              setIndex([i, dir]);
+            }}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === i ? "bg-Theme w-6" : "bg-white/50 w-2"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );

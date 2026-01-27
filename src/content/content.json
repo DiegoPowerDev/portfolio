@@ -85,35 +85,51 @@
       }
     ]
   },
-
+  "Caracteristicas": {
+    "title": "Caracteristicas",
+    "caracteristicas": [
+      {
+        "imagen": "/seo.webp",
+        "titulo": "Mejoras del SEO y Rendimiento al máximo"
+      },
+      {
+        "imagen": "/gtm.webp",
+        "titulo": "Indexado en Google, Google Tag Manager(GTM) y Google Analytics (GA4) para monitoreo y seguimiento"
+      },
+      {
+        "imagen": "/googleAds.webp",
+        "titulo": "Google ADS para campañas publicitarias"
+      }
+    ]
+  },
   "Proyects": {
     "web": {
-      "title": "Proyectos",
+      "title": "Proyectos Personales",
       "proyects": [
         {
           "nombre": "CRIPTO LIVES RATES",
-          "imagen": "https://res.cloudinary.com/dnijsodjv/image/upload/v1758734687/criptoweb_iyltd8.png",
+          "imagen": "/criptoweb.webp",
           "direccion": "https://criptoweb-portfolio.vercel.app",
           "descripcion": "Proyecto enfocado en Web Scraping reuniendo datos de los valores actuales de criptomonedas",
           "tecnologias": ["NestJS", "React", "Playwright", "Tailwind"]
         },
         {
           "nombre": "FAST WEB TOOLS",
-          "imagen": "https://res.cloudinary.com/dnijsodjv/image/upload/v1758734687/fastweb_oezf7j.png",
+          "imagen": "/fasttools.webp",
           "direccion": "https://fasttools.vercel.app",
           "descripcion": "Aplicación web con varias herramientas creadas utilizando funciones nativas del navegador",
           "tecnologias": ["NestJs", "NextJs", "Tailwind"]
         },
         {
           "nombre": "SCREEN SHARER",
-          "imagen": "https://res.cloudinary.com/dnijsodjv/image/upload/v1758734687/screensharer_j1zidw.png",
+          "imagen": "/screensharer.webp",
           "direccion": "https://dev-screensharer.vercel.app",
           "descripcion": "Aplicación web para compartir tu pantalla en tiempo real con otra persona utilizando comunicación peer-to-peer y websockets",
           "tecnologias": ["NestJS", "NextJs", "Tailwind", "Socketio"]
         },
         {
           "nombre": "Notes App",
-          "imagen": "https://res.cloudinary.com/dnijsodjv/image/upload/v1758734687/notesapp_xqnwfx.png",
+          "imagen": "/notesapp.webp",
           "direccion": "https://localdevnotes.vercel.app",
           "descripcion": "Aplicación de notas de almacenamiento local utilizando Zustand para manejo de estado global.",
           "tecnologias": ["Zustand", "React", "NextJs", "Tailwind"]
