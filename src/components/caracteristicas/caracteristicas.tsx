@@ -1,34 +1,126 @@
+"use client";
+
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 interface Caracteristica {
   imagen: string;
   titulo: string;
+  descripcion: string;
 }
 
 interface Props {
-  data: { title: string; caracteristicas: Caracteristica[] };
+  data: {
+    title: string;
+    caracteristicas: Caracteristica[];
+  };
 }
 
-export default function Caracteristicas(prop: Props) {
-  const { title, caracteristicas } = prop.data;
+export default function Caracteristicas(props: Props) {
+  const { title, caracteristicas } = props.data;
+  const [[index, direction], setIndex] = useState([0, 0]);
+
+  const cambiarCaracteristica = (newDirection: number) => {
+    const nextIndex =
+      (index + newDirection + caracteristicas.length) % caracteristicas.length;
+    setIndex([nextIndex, newDirection]);
+  };
+
+  // Auto-scroll cada 5 segundos
+  useEffect(() => {
+    if (caracteristicas.length <= 1) return;
+    const timer = setInterval(() => cambiarCaracteristica(1), 5000);
+    return () => clearInterval(timer);
+  }, [index, caracteristicas.length]);
+
+  const variants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 200 : -200,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => ({
+      x: direction < 0 ? 200 : -200,
+      opacity: 0,
+    }),
+  };
+
   return (
-    <div>
-      <p className="font-bold w-full text-Theme text-2xl md:text-4xl text-center md:text-start">
+    <div className="w-full max-w-4xl mx-auto">
+      <p className="font-bold w-full text-Theme text-2xl md:text-4xl text-center md:text-start mb-8">
         {title}
       </p>
-      <div className="grid md:grid-cols-3 grid-cols-1 gap-8 md:gap-4">
-        {caracteristicas.map((e) => (
-          <div key={e.titulo} className="flex flex-col gap-2">
-            <Image
-              src={e.imagen}
-              alt={e.titulo}
-              width={200}
-              height={200}
-              className="object-contain rounded-xl"
+
+      {/* Contenedor Principal del Carrusel */}
+      <div className="relative w-full h-[450px] md:h-[400px] overflow-hidden rounded-3xl border-2 border-Hover bg-black shadow-lg">
+        <AnimatePresence mode="popLayout" custom={direction}>
+          <motion.div
+            key={index}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.7}
+            onDragEnd={(e, { offset }) => {
+              const swipeThreshold = 50;
+              if (offset.x < -swipeThreshold) {
+                cambiarCaracteristica(1);
+              } else if (offset.x > swipeThreshold) {
+                cambiarCaracteristica(-1);
+              }
+            }}
+            className="absolute inset-0 cursor-grab active:cursor-grabbing flex flex-col items-center"
+          >
+            {/* Título de la característica */}
+            <div className="w-full p-5 font-bold text-Theme text-center text-xl md:text-2xl border-b border-white/5 bg-white/5">
+              {caracteristicas[index].titulo}
+            </div>
+
+            <div className=" grid grid-rows-[auto_auto] md:grid-cols-2 items-center justify-around w-full h-full p-6 md:gap-6">
+              {/* Imagen */}
+              <div className="relative flex w-full h-full  flex-shrink-0">
+                <Image
+                  src={caracteristicas[index].imagen}
+                  alt={caracteristicas[index].titulo}
+                  fill
+                  className="object-contain pointer-events-none select-none"
+                />
+              </div>
+
+              {/* Descripción */}
+              <div className="text-center md:text-left text-sm md:text-lg text-white/90 w-full">
+                {caracteristicas[index].descripcion}
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Indicadores (Puntos) */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+          {caracteristicas.map((_, i) => (
+            <button
+              key={i}
+              aria-label={`Ir a característica ${i + 1}`}
+              onClick={() => {
+                const dir = i > index ? 1 : -1;
+                setIndex([i, dir]);
+              }}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                index === i
+                  ? "bg-Theme w-8"
+                  : "bg-white/30 w-2.5 hover:bg-white/50"
+              }`}
             />
-            <div className="text-center text-sm md:text-md">{e.titulo}</div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
