@@ -83,6 +83,7 @@ function Trabajo({ imagenes, nombre, link }: trabajo) {
                 src={imagenes[index]}
                 alt={nombre}
                 fill
+                sizes="(max-width: 640px) 100vw, 400px"
                 className="object-contain pointer-events-none select-none"
                 priority={index === 0}
               />

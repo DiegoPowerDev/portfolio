@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface Props {
@@ -38,15 +39,18 @@ export default function Products(props: Props) {
         >
           <p className="text-sm md:text-auto">{descripcion}</p>
           <div className="w-full grid grid-cols-3 lg:justify-center justify-start gap-4">
-            {tecnologias.map((element, index) => {
-              const image = element.toLocaleLowerCase();
+            {tecnologias.map((element) => {
+              const image = element.toLowerCase();
+
               return (
-                <img
-                  src={`${image + ".svg"}`}
-                  className="hover:scale-125 md:text-auto h-12 w-12 rounded-lg transition-all duration-150"
-                  key={index}
-                  title={element}
+                <Image
+                  key={element}
+                  src={`/${image}.svg`}
                   alt={element}
+                  title={element}
+                  width={48}
+                  height={48}
+                  className="h-12 w-12 rounded-lg transition-all duration-150 hover:scale-125"
                 />
               );
             })}

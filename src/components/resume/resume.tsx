@@ -92,7 +92,7 @@ function Resume(props: Props) {
       <div className="flex h-96 items-center justify-center p-5">
         <img
           fetchPriority="high"
-          src="https://i.ibb.co/drwFYjN/me.jpg"
+          src="/foto.webp"
           className="max-w-full max-h-full object-contain rounded-full"
           alt="foto"
         />
