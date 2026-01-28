@@ -11,13 +11,12 @@ import Caracteristicas from "@/components/caracteristicas/caracteristicas";
 import dynamic from "next/dynamic";
 import Resume from "@/components/resume/resume";
 
+import Header from "@/components/header/header";
+
 const Detalle = dynamic(() => import("@/components/detalle/detalle"), {
   ssr: false,
 });
 const Comentarios = dynamic(() => import("@/components/coments/coments"), {
-  ssr: false,
-});
-const Header = dynamic(() => import("@/components/header/header"), {
   ssr: false,
 });
 
@@ -98,89 +97,64 @@ export default function Home() {
           <Header data={content.Header} />
         </div>
       </div>
+
       <div
         className={cn(
           "scrollContainer w-full gap-20 h-full flex flex-col pb-20 md:py-20 items-center overflow-y-auto  overflow-x-hidden",
         )}
       >
-        {isMobile ? <div id="Home"></div> : ""}
-
+        <div id="inicio"></div>
         <div className="max-w-4xl w-full px-8 flex flex-col">
-          {isMobile && <div id="Home"></div>}
-          <div
-            id="inicio"
-            className="  h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]"
-          >
+          <div className="  h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Resume data={content.Resume} />
           </div>
-          {isMobile ? <div id="Detail"></div> : ""}
+          <div id="Detail"></div>
         </div>
 
         {/* Sección Detalle */}
         <AnimatedSection delay={0.1}>
-          {isMobile && <div id="Detail"></div>}
-          <div
-            id="Detail"
-            className="h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]"
-          >
+          <div className="h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Detalle data={content.Detail} />
           </div>
-          {isMobile ? <div id="Proyectos"></div> : ""}
+          <div id="Proyectos"></div>
         </AnimatedSection>
 
         <AnimatedSection delay={0}>
-          {isMobile && <div id="Home"></div>}
-          <div
-            id="inicio"
-            className="  h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]"
-          >
+          <div className="  h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Trabajos data={content.Trabajos} />
           </div>
-          {isMobile ? <div id="Detail"></div> : ""}
+          <div id="Trabajos"></div>
         </AnimatedSection>
 
         <AnimatedSection delay={0}>
-          {isMobile && <div id="Home"></div>}
-          <div
-            id="inicio"
-            className="  h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]"
-          >
+          <div className="  h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Caracteristicas data={content.Caracteristicas} />
           </div>
-          {isMobile ? <div id="Detail"></div> : ""}
+          <div id="Proyectos"></div>
         </AnimatedSection>
 
         {/* Sección Proyectos */}
         <AnimatedSection delay={0.1}>
-          {isMobile && <div id="Proyectos"></div>}
           <div
             id="Proyectos"
             className="h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)] "
           >
             <Proyectos data={content.Proyects} />
           </div>
-          {isMobile ? <div id="Tecnologias"></div> : ""}
+          <div id="Tecnologias"></div>
         </AnimatedSection>
 
         {/* Sección Tecnologías */}
         <AnimatedSection delay={0.1}>
-          {isMobile && <div id="Tecnologias"></div>}
-          <div
-            id="Tecnologias"
-            className="h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)] overflow-x-hidden"
-          >
+          <div className="h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)] overflow-x-hidden">
             <Tecnologias data={content.Technologies} />
           </div>
-          {isMobile ? <div id="Contactos"></div> : ""}
+          <div id="Contactos"></div>
         </AnimatedSection>
 
         {/* Sección Comentarios */}
         <AnimatedSection delay={0.1}>
-          {isMobile && <div id="Contactos"></div>}
-          <div
-            id="Contactos"
-            className="h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]"
-          >
+          <div className="h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Comentarios data={content.Comments} />
           </div>
         </AnimatedSection>
