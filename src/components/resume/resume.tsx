@@ -91,14 +91,20 @@ function Resume(props: Props) {
       </div>
 
       <div className="flex h-96 items-center justify-center w-full">
-        <Image
-          src="/foto.webp"
-          alt="Foto de perfil"
-          width={320}
-          height={320}
-          priority
-          className="rounded-full object-contain max-w-full max-h-full"
-        />
+        <div className="relative aspect-square w-full max-w-[320px]">
+          {" "}
+          {/* Contenedor de reserva */}
+          <Image
+            src="/foto.webp"
+            alt="Foto de perfil"
+            width={320}
+            height={320}
+            priority
+            fetchPriority="high"
+            className="rounded-full object-contain"
+            sizes="(max-width: 768px) 100vw, 320px" // Ayuda a Next.js a elegir el tamaño correcto
+          />
+        </div>
       </div>
     </div>
   );
