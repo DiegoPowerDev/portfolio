@@ -91,6 +91,7 @@ function Resume(props: Props) {
 
       <div className="grid items-center justify-center p-5">
         <img
+          fetchPriority="high"
           src="https://i.ibb.co/drwFYjN/me.jpg"
           className="sm:h-96 sm:w-96 rounded-full"
           alt="foto"

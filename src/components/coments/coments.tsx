@@ -77,6 +77,7 @@ function Comentarios(props: Props) {
         {/* Input Nombre */}
         <div className="relative flex flex-col">
           <motion.label
+            htmlFor="nombre"
             variants={labelVariants}
             animate={hasValue("nombre") ? "float" : "idle"}
             className="absolute left-4 top-3 font-bold pointer-events-none z-10 "
@@ -84,6 +85,7 @@ function Comentarios(props: Props) {
             {name}
           </motion.label>
           <motion.input
+            id="nombre"
             {...register("nombre", { required: true })}
             variants={inputVariants}
             whileFocus="focus"
@@ -95,6 +97,7 @@ function Comentarios(props: Props) {
         {/* Input Correo */}
         <div className="relative flex flex-col">
           <motion.label
+            htmlFor="correo"
             variants={labelVariants}
             animate={hasValue("correo") ? "float" : "idle"}
             className="absolute left-4 top-3 font-bold pointer-events-none z-10"
@@ -102,6 +105,7 @@ function Comentarios(props: Props) {
             {email}
           </motion.label>
           <motion.input
+            id="correo"
             {...register("correo", { required: true })}
             variants={inputVariants}
             whileFocus="focus"
@@ -113,6 +117,8 @@ function Comentarios(props: Props) {
         {/* Textarea Comentarios */}
         <div className="relative flex flex-col">
           <motion.label
+            id="comentario"
+            htmlFor="comentario"
             variants={labelVariants}
             animate={hasValue("comentario") ? "float" : "idle"}
             className="absolute left-4 top-3 font-bold pointer-events-none z-10"

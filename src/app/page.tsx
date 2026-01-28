@@ -54,7 +54,7 @@ export default function Home() {
   }, []);
 
   return (
-    <motion.div
+    <motion.main
       className={`w-full h-full flex flex-col md:flex-row overflow-x-hidden  relative bg-black`}
     >
       {/* Efecto deslizante */}
@@ -169,6 +169,6 @@ export default function Home() {
         </AnimatedSection>
       </div>
       <Toaster />
-    </motion.div>
+    </motion.main>
   );
 }
