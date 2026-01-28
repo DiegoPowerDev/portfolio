@@ -89,11 +89,11 @@ function Resume(props: Props) {
         </div>
       </div>
 
-      <div className="grid items-center justify-center p-5">
+      <div className="flex h-96 items-center justify-center p-5">
         <img
           fetchPriority="high"
           src="https://i.ibb.co/drwFYjN/me.jpg"
-          className="sm:h-96 sm:w-96 rounded-full"
+          className="max-w-full max-h-full object-contain rounded-full"
           alt="foto"
         />
       </div>

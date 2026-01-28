@@ -94,6 +94,7 @@ function Trabajo({ imagenes, nombre, link }: trabajo) {
       <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-30">
         {imagenes.map((_, i) => (
           <button
+            aria-label={`imagen${i}`}
             key={i}
             onClick={() => {
               const dir = i > index ? 1 : -1;

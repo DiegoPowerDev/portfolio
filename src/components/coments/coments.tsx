@@ -117,7 +117,6 @@ function Comentarios(props: Props) {
         {/* Textarea Comentarios */}
         <div className="relative flex flex-col">
           <motion.label
-            id="comentario"
             htmlFor="comentario"
             variants={labelVariants}
             animate={hasValue("comentario") ? "float" : "idle"}
@@ -126,6 +125,7 @@ function Comentarios(props: Props) {
             {text}
           </motion.label>
           <motion.textarea
+            id="comentario"
             {...register("comentario", { required: true })}
             variants={inputVariants}
             whileFocus="focus"
