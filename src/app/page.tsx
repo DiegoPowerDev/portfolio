@@ -56,19 +56,6 @@ const AnimatedSection = ({
 };
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <motion.main
       className={`w-full h-full flex flex-col md:flex-row overflow-x-hidden  relative bg-black`}
