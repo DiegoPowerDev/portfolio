@@ -27,10 +27,12 @@ export default function Products(props: Props) {
           </p>
 
           <div className="flex-1 min-h-0 flex items-center justify-center">
-            <img
+            <Image
               src={imagen}
-              className="max-w-full max-h-full object-contain rounded-xl"
               alt={nombre}
+              width={360}
+              height={240}
+              className="object-contain rounded-xl max-w-full max-h-full"
             />
           </div>
         </div>

@@ -6,21 +6,25 @@ const roboto = Roboto({
   weight: ["400", "700"], // Roboto requiere especificar los pesos
   subsets: ["latin"],
   variable: "--font-roboto",
+  display: "swap",
 });
 
 // Configuración de Montserrat
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
+  display: "swap",
 });
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {

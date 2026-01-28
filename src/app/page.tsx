@@ -1,11 +1,5 @@
 "use client";
 
-import Comentarios from "@/components/coments/coments";
-import Detalle from "@/components/detalle/detalle";
-import Header from "@/components/header/header";
-import Proyectos from "@/components/proyects/proyects";
-import Resume from "@/components/resume/resume";
-import Tecnologias from "@/components/tecnologies/tecnologies";
 import content from "@/content/content.json";
 
 import { useState, useEffect, useRef } from "react";
@@ -14,6 +8,32 @@ import { Toaster } from "react-hot-toast";
 import { cn } from "@/lib/utils";
 import Trabajos from "@/components/trabajos/trabajos";
 import Caracteristicas from "@/components/caracteristicas/caracteristicas";
+import dynamic from "next/dynamic";
+
+const Detalle = dynamic(() => import("@/components/detalle/detalle"), {
+  ssr: false,
+});
+const Comentarios = dynamic(() => import("@/components/coments/coments"), {
+  ssr: false,
+});
+const Header = dynamic(() => import("@/components/header/header"), {
+  ssr: false,
+});
+
+const Proyectos = dynamic(() => import("@/components/proyects/proyects"), {
+  ssr: false,
+});
+
+const Resume = dynamic(() => import("@/components/resume/resume"), {
+  ssr: false,
+});
+
+const Tecnologias = dynamic(
+  () => import("@/components/tecnologies/tecnologies"),
+  {
+    ssr: false,
+  },
+);
 
 // Componente de sección animada
 const AnimatedSection = ({

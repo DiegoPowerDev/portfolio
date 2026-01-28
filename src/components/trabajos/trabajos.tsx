@@ -85,7 +85,6 @@ function Trabajo({ imagenes, nombre, link }: trabajo) {
                 fill
                 sizes="(max-width: 640px) 100vw, 400px"
                 className="object-contain pointer-events-none select-none"
-                priority={index === 0}
               />
             </div>
           </motion.div>

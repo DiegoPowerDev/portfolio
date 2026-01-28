@@ -2,6 +2,7 @@ import {
   IconBrandGithubFilled,
   IconBrandLinkedinFilled,
 } from "@tabler/icons-react";
+import Image from "next/image";
 
 interface Props {
   data: {
@@ -89,12 +90,14 @@ function Resume(props: Props) {
         </div>
       </div>
 
-      <div className="flex h-96 items-center justify-center p-5">
-        <img
-          fetchPriority="high"
+      <div className="flex h-96 items-center justify-center w-full">
+        <Image
           src="/foto.webp"
-          className="max-w-full max-h-full object-contain rounded-full"
-          alt="foto"
+          alt="Foto de perfil"
+          width={320}
+          height={320}
+          priority
+          className="rounded-full object-contain max-w-full max-h-full"
         />
       </div>
     </div>
