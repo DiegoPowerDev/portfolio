@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import Trabajos from "@/components/trabajos/trabajos";
 import Caracteristicas from "@/components/caracteristicas/caracteristicas";
 import dynamic from "next/dynamic";
+import Resume from "@/components/resume/resume";
 
 const Detalle = dynamic(() => import("@/components/detalle/detalle"), {
   ssr: false,
@@ -21,10 +22,6 @@ const Header = dynamic(() => import("@/components/header/header"), {
 });
 
 const Proyectos = dynamic(() => import("@/components/proyects/proyects"), {
-  ssr: false,
-});
-
-const Resume = dynamic(() => import("@/components/resume/resume"), {
   ssr: false,
 });
 
