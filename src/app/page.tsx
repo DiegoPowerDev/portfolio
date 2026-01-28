@@ -105,7 +105,7 @@ export default function Home() {
       >
         {isMobile ? <div id="Home"></div> : ""}
 
-        <AnimatedSection delay={0}>
+        <div className="max-w-4xl w-full px-8 flex flex-col">
           {isMobile && <div id="Home"></div>}
           <div
             id="inicio"
@@ -114,7 +114,7 @@ export default function Home() {
             <Resume data={content.Resume} />
           </div>
           {isMobile ? <div id="Detail"></div> : ""}
-        </AnimatedSection>
+        </div>
 
         {/* Sección Detalle */}
         <AnimatedSection delay={0.1}>

@@ -92,8 +92,6 @@ function Resume(props: Props) {
 
       <div className="flex h-96 items-center justify-center w-full">
         <div className="relative aspect-square w-full max-w-[320px]">
-          {" "}
-          {/* Contenedor de reserva */}
           <Image
             src="/foto.webp"
             alt="Foto de perfil"
@@ -101,8 +99,9 @@ function Resume(props: Props) {
             height={320}
             priority
             fetchPriority="high"
+            loading="eager" // FUERZA LA CARGA INMEDIATA
             className="rounded-full object-contain"
-            sizes="(max-width: 768px) 100vw, 320px" // Ayuda a Next.js a elegir el tamaño correcto
+            sizes="(max-width: 768px) 320px, 320px"
           />
         </div>
       </div>
