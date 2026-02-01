@@ -48,8 +48,8 @@ function Comentarios(props: Props) {
           return res.json();
         }),
         {
-          loading: "⏳⏳  ENVIANDO COMENTARIO......",
-          success: "GRACIAS POR EL COMENTARIO!!!!🚀",
+          loading: "ENVIANDO MENSAJE......",
+          success: "¡MENSAJE ENVIADO, ME CONTACTARÉ LO MAS PRONTO CONTIGO!",
           error: (err: { message: string }) => `Error: ${err.message}`,
         },
       )

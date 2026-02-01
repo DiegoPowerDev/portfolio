@@ -80,7 +80,7 @@ export default function Home() {
         }}
       />
       <div className="md:h-full flex items-center">
-        <div className="md:w-48 w-full bg-Background lg:bg-transparent flex items-center justify-center z-50  md:h-3/4 sticky ">
+        <div className="md:w-48 w-full bg-Background lg:bg-transparent flex items-center justify-center z-50  sticky ">
           <Header data={content.Header} />
         </div>
       </div>

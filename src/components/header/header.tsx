@@ -28,7 +28,7 @@ function Header(props: Props) {
     <div className="md:w-32 h-full pt-4 md:pt-0 md:bg-transparent grid grid-cols-5 grid-rows-1 w-full md:flex md:flex-col md:gap-4 items-center justify-center">
       <div className="flex h-full w-full items-center justify-center">
         <a
-          className={`group grid grid-rows-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
+          className={`group flex flex-col gap-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
             selected === "inicio" ? "text-Theme" : ""
           }`}
           href="#inicio"
@@ -50,7 +50,7 @@ function Header(props: Props) {
       </div>
       <div className="flex h-full w-full items-center justify-center">
         <a
-          className={`group grid grid-rows-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
+          className={`group flex flex-col gap-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
             selected === "About" ? "border-Theme text-Theme" : ""
           }`}
           href="#Detail"
@@ -72,7 +72,7 @@ function Header(props: Props) {
       </div>
       <div className="flex h-full w-full items-center justify-center">
         <a
-          className={`group grid grid-rows-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
+          className={`group flex flex-col gap-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
             selected === "proyectos" ? "text-Theme" : ""
           }`}
           href="#Proyectos"
@@ -99,7 +99,7 @@ function Header(props: Props) {
       </div>
       <div className="flex h-full w-full items-center justify-center">
         <a
-          className={`group grid grid-rows-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
+          className={`group flex flex-col gap-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
             selected === "tecnologias" ? "text-Theme" : ""
           }`}
           href="#Tecnologias"
@@ -121,7 +121,7 @@ function Header(props: Props) {
       </div>
       <div className="flex h-full w-full items-center justify-center">
         <a
-          className={`group grid grid-rows-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
+          className={`group flex flex-col gap-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
             selected === "contactos" ? "text-Theme" : ""
           }`}
           href="#Contactos"

@@ -180,6 +180,11 @@
           "url": "/react.svg",
           "alt": "React Native",
           "style": "Icono7"
+        },
+        {
+          "url": "/wordpress.svg",
+          "alt": "Wordpress",
+          "style": "Icono8"
         }
       ]
     },
@@ -248,8 +253,13 @@
       "title": "Herramientas",
       "technologies": [
         {
-          "url": "/bootstrap.svg",
-          "alt": "Bootstrap",
+          "url": "/googleads.svg",
+          "alt": "Google Ads",
+          "style": "Icono18"
+        },
+        {
+          "url": "/googleanalytics.svg",
+          "alt": "Google Analytics",
           "style": "Icono18"
         },
 
