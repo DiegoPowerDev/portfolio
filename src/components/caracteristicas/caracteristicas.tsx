@@ -84,7 +84,7 @@ export default function Caracteristicas(props: Props) {
               {caracteristicas[index].titulo}
             </div>
 
-            <div className=" grid grid-rows-[auto_auto] md:grid-cols-2 items-center justify-around w-full h-full p-6 md:gap-6">
+            <div className="flex flex-col justify-center md:grid md:grid-cols-2 items-center md:justify-around w-full h-full p-6 md:gap-6">
               {/* Imagen */}
               <div className="relative flex w-full h-full  flex-shrink-0">
                 <Image

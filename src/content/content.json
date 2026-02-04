@@ -34,7 +34,7 @@
   },
   "Resume": {
     "first": {
-      "name": "Diego Torres",
+      "name": "DIEGO TORRES",
       "work": "Programador FullStack"
     },
     "second": {
@@ -61,12 +61,12 @@
     }
   },
   "Detail": {
-    "title": "Quien soy",
+    "title": "QUIEN SOY",
     "about": "Soy un desarrollador web y móvil enfocado en crear aplicaciones de alto rendimiento que brinden las mejores experiencias de usuario. Mi experiencia se basa en el uso de frameworks como NextJs y Expo para desarrollar aplicaciones responsivas, de carga rápida y adaptadas tanto para la web como para plataformas móviles.",
     "about2": "Al aprovechar un conjunto diverso de herramientas y frameworks modernos, optimizo cada proyecto para reducir el tiempo de desarrollo."
   },
   "Trabajos": {
-    "title": "Trabajos realizados",
+    "title": "TRABAJOS REALIZADOS",
     "trabajos": [
       {
         "nombre": "Vidmont Villa",
@@ -86,7 +86,7 @@
     ]
   },
   "Caracteristicas": {
-    "title": "Caracteristicas",
+    "title": "CARACTERISTICAS",
     "caracteristicas": [
       {
         "imagen": "/seo.webp",
@@ -107,7 +107,7 @@
   },
   "Proyects": {
     "web": {
-      "title": "Proyectos Personales",
+      "title": "PROYECTOS PERSONALES",
       "proyects": [
         {
           "nombre": "CRIPTO LIVES RATES",
@@ -141,7 +141,7 @@
     }
   },
   "Technologies": {
-    "title": "Tecnologias",
+    "title": "TECNOLOGIAS",
     "frontend": {
       "title": "Frontent",
       "technologies": [
@@ -287,7 +287,7 @@
     }
   },
   "Comments": {
-    "title": "Conversemos",
+    "title": "CONTACTAME",
     "name": "Nombre",
     "email": "Correo",
     "text": "Escribeme un mensaje"

@@ -23,7 +23,8 @@
 
 body {
   color: var(--textColor);
-  font-family: var(--font-montserrat);
+  font-family: monospace;
+  /* font-family: var(--font-montserrat); */
 }
 html {
   @apply scroll-smooth;

@@ -25,16 +25,16 @@ function Header(props: Props) {
   const [selected, setSelected] = useState("inicio");
 
   return (
-    <div className="md:w-32 h-full pt-4 md:pt-0 md:bg-transparent grid grid-cols-5 grid-rows-1 w-full md:flex md:flex-col md:gap-4 items-center justify-center">
+    <div className="md:w-32 bg-black h-full py-4 md:py-10 rounded-b-3xl md:rounded-full grid grid-cols-5 grid-rows-1 w-full md:flex md:flex-col md:gap-4 items-center justify-center">
       <div className="flex h-full w-full items-center justify-center">
         <a
-          className={`group flex flex-col gap-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
+          className={`group  flex flex-col gap-2 items-center justify-center w-full lg:w-32 pt-4 rounded-3xl lg:m-2 lg:rounded-full border-2 border-transparent transition-all hover:scale-105  ${
             selected === "inicio" ? "text-Theme" : ""
           }`}
           href="#inicio"
           onClick={() => setSelected("inicio")}
         >
-          <div className="flex justify-center">
+          <div className="flex  justify-center">
             <IconUser className="h-10 sm:h-14 w-10 sm:w-14 flex justify-center items-center group-hover:stroke-Theme" />
           </div>
           <span
