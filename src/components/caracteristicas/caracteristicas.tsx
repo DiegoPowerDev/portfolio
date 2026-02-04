@@ -77,7 +77,7 @@ export default function Caracteristicas(props: Props) {
                 cambiarCaracteristica(-1);
               }
             }}
-            className="absolute inset-0 cursor-grab active:cursor-grabbing flex flex-col items-center"
+            className="absolute inset-0 cursor-grab active:cursor-grabbing flex flex-col items-center pb-16"
           >
             {/* Título de la característica */}
             <div className="w-full p-5 font-bold text-Theme text-center text-xl md:text-2xl border-b border-white/5 bg-white/5">

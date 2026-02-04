@@ -2,7 +2,7 @@
 
 import content from "@/content/content.json";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 import { cn } from "@/lib/utils";
@@ -48,7 +48,7 @@ const AnimatedSection = ({
       initial={{ opacity: 0, x: 100 }}
       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      className="max-w-4xl w-full px-8 flex flex-col"
+      className="max-w-4xl w-full px-4 md:px-8 flex flex-col "
     >
       {children}
     </motion.div>
@@ -56,8 +56,6 @@ const AnimatedSection = ({
 };
 
 export default function Home() {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
   return (
     <motion.main
       className={`w-full h-full flex flex-col md:flex-row overflow-x-hidden  relative `}
@@ -103,8 +101,8 @@ export default function Home() {
         )}
       >
         <div id="inicio"></div>
-        <div className="max-w-4xl w-full px-8 flex flex-col">
-          <div className="bg-black  h-full w-full bg-theme p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
+        <div className="max-w-4xl w-full px-4 md:px-8  flex flex-col">
+          <div className="bg-black h-full w-full bg-theme p-4 py-12 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Resume data={content.Resume} />
           </div>
           <div id="Detail"></div>
@@ -112,21 +110,21 @@ export default function Home() {
 
         {/* Sección Detalle */}
         <AnimatedSection delay={0.1}>
-          <div className="h-full w-full bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
+          <div className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Detalle data={content.Detail} />
           </div>
           <div id="Proyectos"></div>
         </AnimatedSection>
 
         <AnimatedSection delay={0}>
-          <div className="  h-full w-full bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
+          <div className="  h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Trabajos data={content.Trabajos} />
           </div>
           <div id="Trabajos"></div>
         </AnimatedSection>
 
         <AnimatedSection delay={0}>
-          <div className="  h-full w-full bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
+          <div className="  h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Caracteristicas data={content.Caracteristicas} />
           </div>
           <div id="Proyectos"></div>
@@ -136,7 +134,7 @@ export default function Home() {
         <AnimatedSection delay={0.1}>
           <div
             id="Proyectos"
-            className="h-full w-full bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)] "
+            className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)] "
           >
             <Proyectos data={content.Proyects} />
           </div>
@@ -145,7 +143,7 @@ export default function Home() {
 
         {/* Sección Tecnologías */}
         <AnimatedSection delay={0.1}>
-          <div className="h-full w-full bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)] overflow-x-hidden">
+          <div className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)] overflow-x-hidden">
             <Tecnologias data={content.Technologies} />
           </div>
           <div id="Contactos"></div>
@@ -153,7 +151,7 @@ export default function Home() {
 
         {/* Sección Comentarios */}
         <AnimatedSection delay={0.1}>
-          <div className="h-full w-full bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
+          <div className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_20px_1px_var(--theme)]">
             <Comentarios data={content.Comments} />
           </div>
         </AnimatedSection>

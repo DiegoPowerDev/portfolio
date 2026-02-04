@@ -14,7 +14,7 @@ export default function Item(props: ItemProps) {
   return (
     <div className="w-full flex h-full items-center justify-center">
       <motion.span
-        className={`grid h-full w-20 lg:w-24 justify-center rounded-xl p-1 ${style} grid-rows-[auto,auto] cursor-pointer`}
+        className={`grid h-full w-20 lg:w-24 justify-center rounded-xl p-1 ${style} grid-rows-[auto,auto]`}
         whileHover={{
           scale: 1.1,
           backgroundColor: "var(--theme)",

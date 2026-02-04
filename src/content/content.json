@@ -62,8 +62,12 @@
   },
   "Detail": {
     "title": "QUIEN SOY",
-    "about": "Soy un desarrollador web y móvil enfocado en crear aplicaciones de alto rendimiento que brinden las mejores experiencias de usuario. Mi experiencia se basa en el uso de frameworks como NextJs y Expo para desarrollar aplicaciones responsivas, de carga rápida y adaptadas tanto para la web como para plataformas móviles.",
-    "about2": "Al aprovechar un conjunto diverso de herramientas y frameworks modernos, optimizo cada proyecto para reducir el tiempo de desarrollo."
+    "about": [
+      "Soy desarrollador web especializado en Next.js y WordPress para crear sitios de alto rendimiento. Mi enfoque integra el desarrollo técnico con estrategias avanzadas de",
+      " SEO, Google Ads y Analytics ",
+      "para maximizar la conversión y los ingresos económicos.",
+      "Optimizo cada proyecto mediante un stack moderno que garantiza experiencias de carga rápida y arquitecturas escalables totalmente orientadas a resultados de negocio."
+    ]
   },
   "Trabajos": {
     "title": "TRABAJOS REALIZADOS",
