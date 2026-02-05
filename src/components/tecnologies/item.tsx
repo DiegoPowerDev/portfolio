@@ -42,7 +42,7 @@ export default function Item(props: ItemProps) {
         </motion.div>
 
         <motion.div
-          className="h-full grid justify-center lg:font-bold text-xs text-pretty text-center"
+          className="h-full grid justify-center lg:font-bold  text-pretty text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.1, duration: 0.3 }}

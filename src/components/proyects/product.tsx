@@ -39,7 +39,7 @@ export default function Products(props: Props) {
         <div
           className={`page2 h-64 w-full gap-2 grid grid-rows-[auto,auto] p-4 md:p-7 shadow-[0_0_10px_5px_var(--theme)]`}
         >
-          <p className="text-sm md:text-auto">{descripcion}</p>
+          <p className="">{descripcion}</p>
           <div className="w-full grid grid-cols-3 lg:justify-center justify-start gap-4">
             {tecnologias.map((element) => {
               const image = element.toLowerCase();

@@ -50,7 +50,7 @@ function Trabajo({ imagenes, nombre, link }: trabajo) {
   return (
     <div className="relative w-full h-[350px] overflow-hidden rounded-3xl border-2 border-Hover bg-black">
       <Link href={link} target="_blank">
-        <div className="w-full flex items-center justify-center p-4 font-bold text-Theme z-30 pointer-events-none gap-2">
+        <div className="w-full flex text-lg items-center justify-center p-4 font-bold text-Theme z-30 pointer-events-none gap-2">
           {nombre} <IconExternalLink />
         </div>
       </Link>

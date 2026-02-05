@@ -80,7 +80,7 @@ function Comentarios(props: Props) {
             htmlFor="nombre"
             variants={labelVariants}
             animate={hasValue("nombre") ? "float" : "idle"}
-            className="absolute left-4 top-3 font-bold pointer-events-none z-10 "
+            className="absolute left-4 top-3 font-bold pointer-events-none text-lg z-10 "
           >
             {name}
           </motion.label>
@@ -89,7 +89,7 @@ function Comentarios(props: Props) {
             {...register("nombre", { required: true })}
             variants={inputVariants}
             whileFocus="focus"
-            className="w-full px-4 h-12 bg-transparent rounded-xl outline-none border-2 border-Hover z-0"
+            className="w-full px-4 h-12 bg-transparent rounded-xl text-lg outline-none border-2 border-Hover z-0"
             type="text"
           />
         </div>
@@ -100,7 +100,7 @@ function Comentarios(props: Props) {
             htmlFor="correo"
             variants={labelVariants}
             animate={hasValue("correo") ? "float" : "idle"}
-            className="absolute left-4 top-3 font-bold pointer-events-none z-10"
+            className="absolute left-4 top-3 font-bold text-lg pointer-events-none z-10"
           >
             {email}
           </motion.label>
@@ -109,7 +109,7 @@ function Comentarios(props: Props) {
             {...register("correo", { required: true })}
             variants={inputVariants}
             whileFocus="focus"
-            className="w-full px-4 h-12 bg-transparent rounded-xl outline-none border-2 border-Hover z-0"
+            className="w-full px-4 h-12 bg-transparent text-lg rounded-xl outline-none border-2 border-Hover z-0"
             type="email"
           />
         </div>
@@ -120,7 +120,7 @@ function Comentarios(props: Props) {
             htmlFor="comentario"
             variants={labelVariants}
             animate={hasValue("comentario") ? "float" : "idle"}
-            className="absolute left-4 top-3 font-bold pointer-events-none z-10"
+            className="absolute left-4 top-3 text-lg  font-bold pointer-events-none z-10"
           >
             {text}
           </motion.label>
@@ -129,7 +129,7 @@ function Comentarios(props: Props) {
             {...register("comentario", { required: true })}
             variants={inputVariants}
             whileFocus="focus"
-            className="w-full h-40 rounded-xl p-4 resize-none outline-none bg-transparent border-2 border-Hover z-0"
+            className="w-full h-40 text-lg rounded-xl p-4 resize-none outline-none bg-transparent border-2 border-Hover z-0"
           />
         </div>
 

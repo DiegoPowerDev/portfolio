@@ -175,7 +175,7 @@ function Tecnologias(props: Props) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.7 }}
-              className="flex h-full flex-col w-full gap-x-5"
+              className="flex h-full flex-col w-full gap-x-5 justify-center"
               style={{
                 WebkitMaskImage:
                   "linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0))",

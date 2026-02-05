@@ -96,7 +96,7 @@ export default function Caracteristicas(props: Props) {
               </div>
 
               {/* Descripción */}
-              <div className="text-center md:text-left text-sm md:text-lg text-white/90 w-full">
+              <div className="text-center md:text-left text-md md:text-lg text-white/90 w-full">
                 {caracteristicas[index].descripcion}
               </div>
             </div>
