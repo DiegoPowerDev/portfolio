@@ -2,7 +2,7 @@
 
 import content from "@/content/content.json";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 import { cn } from "@/lib/utils";
@@ -12,6 +12,8 @@ import dynamic from "next/dynamic";
 import Resume from "@/components/resume/resume";
 
 import Header from "@/components/header/header";
+import Background from "@/components/background/background";
+import { useThemeStore } from "@/store/themeStore";
 
 const Detalle = dynamic(() => import("@/components/detalle/detalle"), {
   ssr: false,
@@ -56,43 +58,24 @@ const AnimatedSection = ({
 };
 
 export default function Home() {
+  const incrementPosition = useThemeStore((state) => state.incrementPosition);
+  const theme = useThemeStore((state) => state.theme);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      incrementPosition();
+    }, 10000);
+    return () => clearInterval(interval);
+  }, [incrementPosition]);
+
   return (
     <motion.main
       className={`w-full h-full flex flex-col md:flex-row overflow-x-hidden  relative `}
     >
-      <div className="fixed inset-0 -z-50 w-full h-full overflow-hidden pointer-events-none">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className={`bg-black fixed inset-0 w-full h-full object-cover saturate-200 transition-opacity duration-500`}
-          src="/background.mp4"
-        />
-      </div>
-      {/* Efecto deslizante */}
-      <motion.div
-        className=" absolute w-screen inset-0 pointer-events-none hidden lg:block"
-        style={{
-          background:
-            "linear-gradient(90deg, transparent 0%, var(--theme) 50%, transparent 100%)",
-          width: "30%",
-        }}
-        animate={{
-          x: ["-100%", "400%"],
-          opacity: [0, 0.3, 0],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-          repeatDelay: 1,
-        }}
-      />
-      <div className="md:h-full flex items-center">
-        <div className="md:w-48 w-full lg:bg-transparent flex items-center justify-center z-50  sticky ">
-          <Header data={content.Header} />
-        </div>
+      <Background />
+
+      <div className="md:h-full max-h-screen overflow-y-hidden flex items-center">
+        <Header data={content.Header} />
       </div>
 
       <div
@@ -103,8 +86,10 @@ export default function Home() {
         <div id="inicio"></div>
         <div className="max-w-4xl w-full px-4 md:px-8  flex flex-col">
           <div
-            className="bg-black h-full w-full bg-theme p-4 py-12 md:p-10 rounded-3xl flex flex-col  
-          shadow-[0_0_10px_5px_var(--theme)]"
+            style={{
+              boxShadow: `0 0 10px 5px ${theme.theme}`,
+            }}
+            className="bg-black h-full w-full p-4 py-12 md:p-10 rounded-3xl flex flex-col"
           >
             <Resume data={content.Resume} />
           </div>
@@ -113,21 +98,36 @@ export default function Home() {
 
         {/* Sección Detalle */}
         <AnimatedSection delay={0.1}>
-          <div className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_10px_5px_var(--theme)]">
+          <div
+            style={{
+              boxShadow: `0 0 10px 5px ${theme.theme}`,
+            }}
+            className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col"
+          >
             <Detalle data={content.Detail} />
           </div>
           <div id="Proyectos"></div>
         </AnimatedSection>
 
         <AnimatedSection delay={0}>
-          <div className="  h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_10px_5px_var(--theme)]">
+          <div
+            style={{
+              boxShadow: `0 0 10px 5px ${theme.theme}`,
+            }}
+            className="  h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col"
+          >
             <Trabajos data={content.Trabajos} />
           </div>
           <div id="Trabajos"></div>
         </AnimatedSection>
 
         <AnimatedSection delay={0}>
-          <div className="  h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_10px_5px_var(--theme)]">
+          <div
+            style={{
+              boxShadow: `0 0 10px 5px ${theme.theme}`,
+            }}
+            className="h-full w-full py-12 bg-black p-4 md:p-10 rounded-3xl flex flex-col"
+          >
             <Caracteristicas data={content.Caracteristicas} />
           </div>
           <div id="Proyectos"></div>
@@ -137,7 +137,10 @@ export default function Home() {
         <AnimatedSection delay={0.1}>
           <div
             id="Proyectos"
-            className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_10px_5px_var(--theme)] "
+            style={{
+              boxShadow: `0 0 10px 5px ${theme.theme}`,
+            }}
+            className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col"
           >
             <Proyectos data={content.Proyects} />
           </div>
@@ -146,7 +149,12 @@ export default function Home() {
 
         {/* Sección Tecnologías */}
         <AnimatedSection delay={0.1}>
-          <div className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_10px_5px_var(--theme)] overflow-x-hidden">
+          <div
+            style={{
+              boxShadow: `0 0 10px 5px ${theme.theme}`,
+            }}
+            className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col overflow-x-hidden"
+          >
             <Tecnologias data={content.Technologies} />
           </div>
           <div id="Contactos"></div>
@@ -154,7 +162,12 @@ export default function Home() {
 
         {/* Sección Comentarios */}
         <AnimatedSection delay={0.1}>
-          <div className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col  shadow-[0_0_10px_5px_var(--theme)]">
+          <div
+            style={{
+              boxShadow: `0 0 10px 5px ${theme.theme}`,
+            }}
+            className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col"
+          >
             <Comentarios data={content.Comments} />
           </div>
         </AnimatedSection>

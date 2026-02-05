@@ -1,3 +1,4 @@
+import { useThemeStore } from "@/store/themeStore";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,6 +12,7 @@ interface Props {
 
 export default function Products(props: Props) {
   const { nombre, imagen, direccion, descripcion, tecnologias } = props;
+  const theme = useThemeStore((s) => s.theme);
 
   return (
     <Link
@@ -20,7 +22,10 @@ export default function Products(props: Props) {
     >
       <div className={`cards flex flex-col h-full w-full`}>
         <div
-          className={`page1 h-full w-full flex flex-col gap-2 p-2 shadow-[0_0_10px_5px_var(--theme)]`}
+          style={{
+            boxShadow: `0 0 10px 5px ${theme.theme}`,
+          }}
+          className={`page1 h-full w-full flex flex-col gap-2 p-2`}
         >
           <p className="text-md sm:text-2xl flex justify-center text-center shrink-0">
             {nombre}
@@ -37,7 +42,10 @@ export default function Products(props: Props) {
           </div>
         </div>
         <div
-          className={`page2 h-64 w-full gap-2 grid grid-rows-[auto,auto] p-4 md:p-7 shadow-[0_0_10px_5px_var(--theme)]`}
+          style={{
+            boxShadow: `0 0 10px 5px ${theme.theme}`,
+          }}
+          className={`page2 h-64 w-full gap-2 grid grid-rows-[auto,auto] p-4 md:p-7 `}
         >
           <p className="">{descripcion}</p>
           <div className="w-full grid grid-cols-3 lg:justify-center justify-start gap-4">

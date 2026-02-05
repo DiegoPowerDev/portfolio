@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useThemeStore } from "@/store/themeStore";
 
 interface Caracteristica {
   imagen: string;
@@ -20,6 +21,7 @@ interface Props {
 export default function Caracteristicas(props: Props) {
   const { title, caracteristicas } = props.data;
   const [[index, direction], setIndex] = useState([0, 0]);
+  const theme = useThemeStore((s) => s.theme);
 
   const cambiarCaracteristica = (newDirection: number) => {
     const nextIndex =
@@ -51,7 +53,10 @@ export default function Caracteristicas(props: Props) {
 
   return (
     <div className="w-full max-w-4xl mx-auto">
-      <p className="font-bold w-full text-Theme text-2xl md:text-4xl text-center md:text-start mb-8">
+      <p
+        style={{ color: theme.theme }}
+        className="font-bold w-full text-2xl md:text-4xl text-center md:text-start mb-8"
+      >
         {title}
       </p>
 
@@ -80,7 +85,10 @@ export default function Caracteristicas(props: Props) {
             className="absolute inset-0 cursor-grab active:cursor-grabbing flex flex-col items-center pb-16"
           >
             {/* Título de la característica */}
-            <div className="w-full p-5 font-bold text-Theme text-center text-xl md:text-2xl border-b border-white/5 bg-white/5">
+            <div
+              style={{ color: theme.theme }}
+              className="w-full p-5 font-bold ext-center text-xl md:text-2xl border-b border-white/5 bg-white/5"
+            >
               {caracteristicas[index].titulo}
             </div>
 
@@ -113,11 +121,11 @@ export default function Caracteristicas(props: Props) {
                 const dir = i > index ? 1 : -1;
                 setIndex([i, dir]);
               }}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                index === i
-                  ? "bg-Theme w-8"
-                  : "bg-white/30 w-2.5 hover:bg-white/50"
-              }`}
+              style={{
+                background: index === i ? theme.theme : "white",
+                width: index === i ? "20px" : "10px ",
+              }}
+              className={`h-2.5 rounded-full transition-all duration-300 ${"bg-white/30 hover:bg-white/50"}`}
             />
           ))}
         </div>

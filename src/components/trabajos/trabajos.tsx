@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { IconExternalLink, IconWindow } from "@tabler/icons-react";
+import { useThemeStore } from "@/store/themeStore";
 
 interface trabajo {
   nombre: string;
@@ -19,7 +20,7 @@ interface Props {
 
 function Trabajo({ imagenes, nombre, link }: trabajo) {
   const [[index, direction], setIndex] = useState([0, 0]);
-
+  const theme = useThemeStore((s) => s.theme);
   const cambiarImagen = (newDirection: number) => {
     const nextIndex =
       (index + newDirection + imagenes.length) % imagenes.length;
@@ -50,7 +51,10 @@ function Trabajo({ imagenes, nombre, link }: trabajo) {
   return (
     <div className="relative w-full h-[350px] overflow-hidden rounded-3xl border-2 border-Hover bg-black">
       <Link href={link} target="_blank">
-        <div className="w-full flex text-lg items-center justify-center p-4 font-bold text-Theme z-30 pointer-events-none gap-2">
+        <div
+          style={{ color: theme.theme }}
+          className="w-full flex text-lg items-center justify-center p-4 font-bold z-30 pointer-events-none gap-2"
+        >
           {nombre} <IconExternalLink />
         </div>
       </Link>
@@ -100,8 +104,9 @@ function Trabajo({ imagenes, nombre, link }: trabajo) {
               const dir = i > index ? 1 : -1;
               setIndex([i, dir]);
             }}
+            style={{ color: index === i ? theme.theme : "#fafafa50" }}
             className={`h-2 rounded-full transition-all duration-300 ${
-              index === i ? "bg-Theme w-6" : "bg-white/50 w-2"
+              index === i ? " w-6" : " w-2"
             }`}
           />
         ))}

@@ -4,6 +4,7 @@ import { IconCaretUp, IconCaretDown } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Item from "./item";
+import { useThemeStore } from "@/store/themeStore";
 
 interface Props {
   data: {
@@ -62,7 +63,7 @@ const itemVariants = {
     transition: { duration: 1 },
   },
 };
-
+const theme = useThemeStore((s) => s.theme);
 // Componente para cada categoría de tecnologías
 const TechCategory = ({
   title,
@@ -73,13 +74,19 @@ const TechCategory = ({
 }) => (
   <motion.div
     variants={itemVariants}
-    className="w-full h-full flex flex-col border-2 border-Theme rounded-xl shadow-[0px_0px_10px_0px_#10B981] p-5"
+    style={{
+      border: `2px solid ${theme.theme}`,
+      boxShadow: `0 0 10px 5px ${theme.theme}`,
+    }}
+    className="w-full h-full flex flex-col rounded-xl 
+    p-5"
   >
     <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="text-textTheme h-full text-center  text-2xl md:text-4xl  font-bold mb-4"
+      style={{ color: theme.textColor }}
+      className=" h-full text-center  text-2xl md:text-4xl  font-bold mb-4"
     >
       {title}
     </motion.div>
@@ -136,7 +143,10 @@ function Tecnologias(props: Props) {
 
   return (
     <div className="w-full  flex flex-col gap-4">
-      <p className="font-bold text-Theme text-2xl md:text-4xl text-center md:text-start">
+      <p
+        style={{ color: theme.theme }}
+        className="font-bold  text-2xl md:text-4xl text-center md:text-start"
+      >
         {title}
       </p>
 
@@ -205,7 +215,8 @@ function Tecnologias(props: Props) {
       </div>
 
       <motion.div
-        className="h-10 flex items-center justify-center bg-Theme hover:bg-Hover rounded-xl cursor-pointer"
+        style={{ background: theme.theme }}
+        className="h-10 flex items-center justify-center hover:opacity-70 rounded-xl cursor-pointer"
         onClick={changeModal}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}

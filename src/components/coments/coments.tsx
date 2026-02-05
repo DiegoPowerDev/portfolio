@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
+import { useThemeStore } from "@/store/themeStore";
 
 interface Props {
   data: {
@@ -13,24 +14,25 @@ interface Props {
     text: string;
   };
 }
-const inputVariants = {
-  focus: {
-    borderColor: "var(--theme)",
-    boxShadow: "0 0 15px rgba(var(--theme-rgb), 0.3)",
-  },
-  idle: { scale: 1, borderColor: "var(--hover)" },
-};
 
-const labelVariants = {
-  float: { y: -40, x: -5, color: "var(--theme)" },
-  idle: { y: 0, x: 0, color: "gray" }, // Color gris base
-};
 function Comentarios(props: Props) {
+  const theme = useThemeStore((s) => s.theme);
   const { title, name, email, text } = props.data;
   const { register, handleSubmit, reset, watch } = useForm();
 
   const informacionFormulario = watch();
+  const inputVariants = {
+    focus: {
+      borderColor: theme.theme,
+      boxShadow: "0 0 15px theme.theme, 0.3)",
+    },
+    idle: { scale: 1, borderColor: "var(--hover)" },
+  };
 
+  const labelVariants = {
+    float: { y: -40, x: -5, color: theme.theme },
+    idle: { y: 0, x: 0, color: "gray" }, // Color gris base
+  };
   const Datos = async () => {
     toast
       .promise(
@@ -66,9 +68,10 @@ function Comentarios(props: Props) {
   return (
     <div className="h-full w-full">
       <motion.p
+        style={{ color: theme.theme }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full font-bold text-Theme text-2xl md:text-4xl text-center md:text-start mb-10"
+        className="w-full font-bold text-2xl md:text-4xl text-center md:text-start mb-10"
       >
         {title}
       </motion.p>
@@ -134,7 +137,10 @@ function Comentarios(props: Props) {
         </div>
 
         <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-          <Button className="w-full bg-Theme h-12 rounded-xl hover:bg-Hover text-white font-bold transition-colors">
+          <Button
+            style={{ background: theme.theme }}
+            className="w-full  h-12 rounded-xl hover:opacity-70 text-white font-bold transition-colors"
+          >
             ENVIAR CORREO
           </Button>
         </motion.div>

@@ -1,5 +1,5 @@
+import { useThemeStore } from "@/store/themeStore";
 import Products from "./product";
-// import "@justinribeiro/lite-youtube";
 
 interface Props {
   data: {
@@ -18,10 +18,14 @@ interface Props {
 
 function Proyectos(props: Props) {
   const { web } = props.data;
+  const theme = useThemeStore((s) => s.theme);
 
   return (
     <div className="h-full w-full flex flex-col gap-8  items-center justify-center content-center ">
-      <p className="font-bold w-full text-Theme text-2xl md:text-4xl text-center md:text-start">
+      <p
+        style={{ color: theme.theme }}
+        className="font-bold w-full text-2xl md:text-4xl text-center md:text-start"
+      >
         {web.title}
       </p>
       <div className="h-full w-full grid md:grid-cols-2 grid-rows-auto gap-8 md:gap-y-12">
