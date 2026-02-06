@@ -35,10 +35,6 @@ html {
   transform: rotateY(180deg);
 }
 
-.liteyoutubefallback:hover {
-  box-shadow: 1px 1px 20px 2px #008080;
-}
-
 .scrollContainer {
   scroll-behavior: smooth;
   scrollbar-width: thin;

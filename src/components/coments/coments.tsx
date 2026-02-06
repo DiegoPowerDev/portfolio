@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { Button } from "../ui/button";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useThemeStore } from "@/store/themeStore";
 
 interface Props {
@@ -21,17 +21,30 @@ function Comentarios(props: Props) {
   const { register, handleSubmit, reset, watch } = useForm();
 
   const informacionFormulario = watch();
-  const inputVariants = {
+  const inputVariants: Variants = {
     focus: {
-      borderColor: theme.theme,
-      boxShadow: "0 0 15px theme.theme, 0.3)",
+      border: `2px solid ${theme.theme}`,
+      transition: { duration: 0.2, ease: "easeInOut" },
     },
-    idle: { scale: 1, borderColor: "var(--hover)" },
+    idle: {
+      border: `2px solid ${theme.textColor}`,
+      transition: { duration: 0.2 },
+    },
   };
 
   const labelVariants = {
-    float: { y: -40, x: -5, color: theme.theme },
-    idle: { y: 0, x: 0, color: "gray" }, // Color gris base
+    float: {
+      y: -40,
+      x: -5,
+      scale: 0.9, // Añadir un poco de escala lo hace ver más Pro
+      color: theme.theme,
+    },
+    idle: {
+      y: 0,
+      x: 0,
+      scale: 1,
+      color: theme.textColor,
+    },
   };
   const Datos = async () => {
     toast
@@ -90,9 +103,11 @@ function Comentarios(props: Props) {
           <motion.input
             id="nombre"
             {...register("nombre", { required: true })}
+            initial="idle" // Importante definir el estado inicial
+            animate="idle" // Mantiene el color del tema actual aunque no tenga foco
             variants={inputVariants}
             whileFocus="focus"
-            className="w-full px-4 h-12 bg-transparent rounded-xl text-lg outline-none border-2 border-Hover z-0"
+            className="w-full px-4 h-12 bg-transparent rounded-xl text-lg outline-none z-0"
             type="text"
           />
         </div>
@@ -109,10 +124,12 @@ function Comentarios(props: Props) {
           </motion.label>
           <motion.input
             id="correo"
+            initial="idle" // Importante definir el estado inicial
+            animate="idle" // Mantiene el color del tema actual aunque no tenga foco
+            whileFocus="focus"
             {...register("correo", { required: true })}
             variants={inputVariants}
-            whileFocus="focus"
-            className="w-full px-4 h-12 bg-transparent text-lg rounded-xl outline-none border-2 border-Hover z-0"
+            className="w-full px-4 h-12 bg-transparent text-lg rounded-xl outline-none  z-0"
             type="email"
           />
         </div>
@@ -131,8 +148,10 @@ function Comentarios(props: Props) {
             id="comentario"
             {...register("comentario", { required: true })}
             variants={inputVariants}
+            initial="idle" // Importante definir el estado inicial
+            animate="idle" // Mantiene el color del tema actual aunque no tenga foco
             whileFocus="focus"
-            className="w-full h-40 text-lg rounded-xl p-4 resize-none outline-none bg-transparent border-2 border-Hover z-0"
+            className="w-full h-40 text-lg rounded-xl p-4 resize-none outline-none bg-transparent z-0"
           />
         </div>
 
