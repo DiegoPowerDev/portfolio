@@ -10,30 +10,15 @@ import Trabajos from "@/components/trabajos/trabajos";
 import Caracteristicas from "@/components/caracteristicas/caracteristicas";
 import dynamic from "next/dynamic";
 import Resume from "@/components/resume/resume";
+import Detalle from "@/components/detalle/detalle";
+import Comentarios from "@/components/coments/coments";
+import Proyectos from "@/components/proyects/proyects";
+import Tecnologias from "@/components/tecnologies/tecnologies";
 
 import Header from "@/components/header/header";
 import Background from "@/components/background/background";
 import { useThemeStore } from "@/store/themeStore";
 
-const Detalle = dynamic(() => import("@/components/detalle/detalle"), {
-  ssr: false,
-});
-const Comentarios = dynamic(() => import("@/components/coments/coments"), {
-  ssr: false,
-});
-
-const Proyectos = dynamic(() => import("@/components/proyects/proyects"), {
-  ssr: false,
-});
-
-const Tecnologias = dynamic(
-  () => import("@/components/tecnologies/tecnologies"),
-  {
-    ssr: false,
-  },
-);
-
-// Componente de sección animada
 const AnimatedSection = ({
   children,
   delay = 0,

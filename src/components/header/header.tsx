@@ -45,6 +45,7 @@ function Header(props: Props) {
       className="p-4 h-full md:py-10  flex w-full md:flex md:flex-col md:gap-4 items-center  justify-center z-50 sticky overflow-hidden "
     >
       <a
+        aria-label={me}
         style={{
           color: selected === "inicio" ? theme.theme : "",
           border: `2px solid ${theme.theme}`,
@@ -68,6 +69,7 @@ function Header(props: Props) {
       </a>
 
       <a
+        aria-label={about}
         style={{
           color: selected === "About" ? theme.theme : "",
           border: `2px solid ${theme.theme}`,
@@ -90,6 +92,7 @@ function Header(props: Props) {
         </span>
       </a>
       <a
+        aria-label={trabajos}
         style={{
           color: selected === "trabajos" ? theme.theme : "",
           border: `2px solid ${theme.theme}`,
@@ -137,6 +140,7 @@ function Header(props: Props) {
       </a>
 
       <a
+        aria-label={proyects}
         style={{
           color: selected === "proyectos" ? theme.theme : "",
           border: `2px solid ${theme.theme}`,
@@ -183,6 +187,7 @@ function Header(props: Props) {
       </a>
 
       <a
+        aria-label={contact}
         style={{
           color: selected === "contactos" ? theme.theme : "",
           border: `2px solid ${theme.theme}`,
