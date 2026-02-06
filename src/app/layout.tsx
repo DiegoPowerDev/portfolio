@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import content from "@/content/content.json";
-
+import { Analytics } from "@vercel/analytics/next";
 import {
   Cinzel,
   Righteous,
@@ -55,6 +55,7 @@ export default function RootLayout({
       >
         {children}
       </body>
+      <Analytics />
     </html>
   );
 }

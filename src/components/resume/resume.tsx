@@ -76,6 +76,7 @@ function Resume(props: Props) {
           <div className="w-full flex justify-center ">
             <motion.a
               href={links.github.detail}
+              target="_blank"
               className="flex flex-col items-center"
               whileHover={{
                 scale: 1.25,
@@ -110,6 +111,7 @@ function Resume(props: Props) {
               }}
               style={{ color: theme.textColor, fill: theme.textColor }}
               href={links.linkedin.detail}
+              target="_blank"
               className="flex flex-col items-center"
             >
               <IconBrandLinkedinFilled
