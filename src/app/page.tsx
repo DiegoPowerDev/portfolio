@@ -106,12 +106,12 @@ export default function Home() {
             >
               <Resume data={content.Resume} />
             </div>
-            <div id="Detail"></div>
           </div>
 
           {/* Sección Detalle */}
           <AnimatedSection delay={0.1}>
             <div
+              id="Detail"
               style={{
                 boxShadow: `0 0 10px 5px ${theme.theme}`,
                 background: theme.background,
@@ -120,11 +120,11 @@ export default function Home() {
             >
               <Detalle data={content.Detail} />
             </div>
-            <div id="Proyectos"></div>
           </AnimatedSection>
 
           <AnimatedSection delay={0}>
             <div
+              id="trabajos"
               style={{
                 boxShadow: `0 0 10px 5px ${theme.theme}`,
                 background: theme.background,
@@ -133,11 +133,11 @@ export default function Home() {
             >
               <Trabajos data={content.Trabajos} />
             </div>
-            <div id="Trabajos"></div>
           </AnimatedSection>
 
           <AnimatedSection delay={0}>
             <div
+              id="caracteristicas"
               style={{
                 boxShadow: `0 0 10px 5px ${theme.theme}`,
                 background: theme.background,
@@ -146,7 +146,6 @@ export default function Home() {
             >
               <Caracteristicas data={content.Caracteristicas} />
             </div>
-            <div id="Proyectos"></div>
           </AnimatedSection>
 
           {/* Sección Proyectos */}
@@ -161,12 +160,12 @@ export default function Home() {
             >
               <Proyectos data={content.Proyects} />
             </div>
-            <div id="Tecnologias"></div>
           </AnimatedSection>
 
           {/* Sección Tecnologías */}
           <AnimatedSection delay={0.1}>
             <div
+              id="Tecnologias"
               style={{
                 boxShadow: `0 0 10px 5px ${theme.theme}`,
                 background: theme.background,
@@ -175,12 +174,12 @@ export default function Home() {
             >
               <Tecnologias data={content.Technologies} />
             </div>
-            <div id="Contactos"></div>
           </AnimatedSection>
 
           {/* Sección Comentarios */}
           <AnimatedSection delay={0.1}>
             <div
+              id="Contactos"
               style={{
                 boxShadow: `0 0 10px 5px ${theme.theme}`,
                 background: theme.background,

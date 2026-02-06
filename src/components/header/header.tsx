@@ -7,6 +7,8 @@ import {
   IconCode,
   IconTools,
   IconMailFast,
+  IconBraces,
+  IconBuildingAirport,
 } from "@tabler/icons-react";
 import { useThemeStore } from "@/store/themeStore";
 
@@ -14,6 +16,8 @@ interface Props {
   data: {
     me: string;
     about: string;
+    trabajos: string;
+    caracteristicas: string;
     proyects: string;
     technologies: string;
     contact: string;
@@ -21,7 +25,15 @@ interface Props {
 }
 
 function Header(props: Props) {
-  const { me, proyects, about, technologies, contact } = props.data;
+  const {
+    me,
+    proyects,
+    trabajos,
+    caracteristicas,
+    about,
+    technologies,
+    contact,
+  } = props.data;
   const theme = useThemeStore((s) => s.theme);
   const [selected, setSelected] = useState("inicio");
 
@@ -77,6 +89,52 @@ function Header(props: Props) {
           {about}
         </span>
       </a>
+      <a
+        style={{
+          color: selected === "trabajos" ? theme.theme : "",
+          border: `2px solid ${theme.theme}`,
+          background: selected === "trabajos" ? `${theme.background}` : "",
+        }}
+        className={`flex gap-2 items-center justify-center md:justify-start px-2 w-full rounded-3xl border-2 border-transparent transition-all hover:scale-105`}
+        href="#trabajos"
+        onClick={() => setSelected("trabajos")}
+      >
+        <div className="flex h-12 justify-center items-center">
+          <IconBuildingAirport className="flex justify-center items-center  " />
+        </div>
+        <span
+          style={{
+            color: selected === "trabajos" ? theme.theme : theme.textColor,
+          }}
+          className={`hidden md:flex font-bold  text-center transition-all duration-300 text-sm`}
+        >
+          {trabajos}
+        </span>
+      </a>
+      <a
+        style={{
+          color: selected === "caracteristicas" ? theme.theme : "",
+          border: `2px solid ${theme.theme}`,
+          background:
+            selected === "caracteristicas" ? `${theme.background}` : "",
+        }}
+        className={`flex gap-2 items-center justify-center md:justify-start px-2 w-full rounded-3xl border-2 border-transparent transition-all hover:scale-105`}
+        href="#caracteristicas"
+        onClick={() => setSelected("caracteristicas")}
+      >
+        <div className="flex h-12 justify-center items-center">
+          <IconBraces className="flex justify-center items-center  " />
+        </div>
+        <span
+          style={{
+            color:
+              selected === "caracteristicas" ? theme.theme : theme.textColor,
+          }}
+          className={`hidden md:flex font-bold  text-center transition-all duration-300 text-sm`}
+        >
+          {caracteristicas}
+        </span>
+      </a>
 
       <a
         style={{
@@ -89,10 +147,7 @@ function Header(props: Props) {
         onClick={() => setSelected("proyectos")}
       >
         <div className="flex h-12 justify-center items-center">
-          <IconCode
-            fill="white"
-            className={`flex justify-center items-center`}
-          />
+          <IconCode className={`flex justify-center items-center`} />
         </div>
         <span
           style={{

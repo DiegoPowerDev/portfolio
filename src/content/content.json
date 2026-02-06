@@ -28,6 +28,8 @@
   "Header": {
     "me": "Yo",
     "about": "Quien soy",
+    "trabajos": "Trabajos",
+    "caracteristicas": "Caracteristicas",
     "proyects": "Proyectos",
     "technologies": "Tecnologias",
     "contact": "Contacto"
