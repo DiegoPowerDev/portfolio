@@ -25,194 +25,81 @@ interface Props {
 }
 
 function Header(props: Props) {
-  const {
-    me,
-    proyects,
-    trabajos,
-    caracteristicas,
-    about,
-    technologies,
-    contact,
-  } = props.data;
   const theme = useThemeStore((s) => s.theme);
   const [selected, setSelected] = useState("inicio");
-
+  const menuItems = [
+    { id: "inicio", label: props.data.me, icon: IconUser, href: "#inicio" },
+    {
+      id: "About",
+      label: props.data.about,
+      icon: IconAddressBook,
+      href: "#Detail",
+    },
+    {
+      id: "trabajos",
+      label: props.data.trabajos,
+      icon: IconBuildingAirport,
+      href: "#trabajos",
+    },
+    {
+      id: "caracteristicas",
+      label: props.data.caracteristicas,
+      icon: IconBraces,
+      href: "#caracteristicas",
+    },
+    {
+      id: "proyectos",
+      label: props.data.proyects,
+      icon: IconCode,
+      href: "#Proyectos",
+    },
+    {
+      id: "tecnologias",
+      label: props.data.technologies,
+      icon: IconTools,
+      href: "#Tecnologias",
+    },
+    {
+      id: "contactos",
+      label: props.data.contact,
+      icon: IconMailFast,
+      href: "#Contactos",
+    },
+  ];
   return (
-    <div
-      style={{
-        borderColor: `${theme.background}`,
-      }}
-      className="p-4 h-full md:py-10  flex w-full md:flex md:flex-col md:gap-4 items-center  justify-center z-50 sticky overflow-hidden "
-    >
-      <a
-        aria-label={me}
-        style={{
-          color: selected === "inicio" ? theme.theme : "",
-          border: `2px solid ${theme.theme}`,
-          background: selected === "inicio" ? `${theme.background}` : "",
-        }}
-        className={`flex gap-2 items-center justify-center md:justify-start px-2 w-full rounded-3xl transition-all hover:scale-105`}
-        href="#inicio"
-        onClick={() => setSelected("inicio")}
-      >
-        <div className="flex h-12 justify-center items-center">
-          <IconUser className="flex justify-center items-center " />
-        </div>
-        <span
-          style={{
-            color: selected === "inicio" ? theme.theme : theme.textColor,
-          }}
-          className={`hidden md:block text-center font-bold transition-all duration-300 text-sm`}
-        >
-          {me}
-        </span>
-      </a>
+    <nav className="p-4 h-full md:py-10 flex w-full md:flex-col md:gap-2 items-center justify-center z-50 sticky overflow-hidden">
+      {menuItems.map((item) => {
+        const isSelected = selected === item.id;
+        const Icon = item.icon;
 
-      <a
-        aria-label={about}
-        style={{
-          color: selected === "About" ? theme.theme : "",
-          border: `2px solid ${theme.theme}`,
-          background: selected === "About" ? `${theme.background}` : "",
-        }}
-        className={`flex gap-2 items-center justify-center md:justify-start px-2 w-full rounded-3xl border-2 border-transparent transition-all hover:scale-105`}
-        href="#Detail"
-        onClick={() => setSelected("About")}
-      >
-        <div className="flex h-12 justify-center items-center">
-          <IconAddressBook className="flex justify-center items-center  " />
-        </div>
-        <span
-          style={{
-            color: selected === "About" ? theme.theme : theme.textColor,
-          }}
-          className={`hidden md:flex font-bold  text-center transition-all duration-300 text-sm`}
-        >
-          {about}
-        </span>
-      </a>
-      <a
-        aria-label={trabajos}
-        style={{
-          color: selected === "trabajos" ? theme.theme : "",
-          border: `2px solid ${theme.theme}`,
-          background: selected === "trabajos" ? `${theme.background}` : "",
-        }}
-        className={`flex gap-2 items-center justify-center md:justify-start px-2 w-full rounded-3xl border-2 border-transparent transition-all hover:scale-105`}
-        href="#trabajos"
-        onClick={() => setSelected("trabajos")}
-      >
-        <div className="flex h-12 justify-center items-center">
-          <IconBuildingAirport className="flex justify-center items-center  " />
-        </div>
-        <span
-          style={{
-            color: selected === "trabajos" ? theme.theme : theme.textColor,
-          }}
-          className={`hidden md:flex font-bold  text-center transition-all duration-300 text-sm`}
-        >
-          {trabajos}
-        </span>
-      </a>
-      <a
-        style={{
-          color: selected === "caracteristicas" ? theme.theme : "",
-          border: `2px solid ${theme.theme}`,
-          background:
-            selected === "caracteristicas" ? `${theme.background}` : "",
-        }}
-        className={`flex gap-2 items-center justify-center md:justify-start px-2 w-full rounded-3xl border-2 border-transparent transition-all hover:scale-105`}
-        href="#caracteristicas"
-        onClick={() => setSelected("caracteristicas")}
-      >
-        <div className="flex h-12 justify-center items-center">
-          <IconBraces className="flex justify-center items-center  " />
-        </div>
-        <span
-          style={{
-            color:
-              selected === "caracteristicas" ? theme.theme : theme.textColor,
-          }}
-          className={`hidden md:flex font-bold  text-center transition-all duration-300 text-sm`}
-        >
-          {caracteristicas}
-        </span>
-      </a>
-
-      <a
-        aria-label={proyects}
-        style={{
-          color: selected === "proyectos" ? theme.theme : "",
-          border: `2px solid ${theme.theme}`,
-          background: selected === "proyectos" ? `${theme.background}` : "",
-        }}
-        className={`flex gap-2 items-center px-2 w-full justify-center md:justify-start rounded-3xl border-2 border-transparent transition-all hover:scale-105`}
-        href="#Proyectos"
-        onClick={() => setSelected("proyectos")}
-      >
-        <div className="flex h-12 justify-center items-center">
-          <IconCode className={`flex justify-center items-center`} />
-        </div>
-        <span
-          style={{
-            color: selected === "proyectos" ? theme.theme : theme.textColor,
-          }}
-          className={` text-center hidden md:flex font-bold transition-all duration-300 text-sm`}
-        >
-          {proyects}
-        </span>
-      </a>
-
-      <a
-        style={{
-          color: selected === "tecnologias" ? theme.theme : "",
-          border: `2px solid ${theme.theme}`,
-          background: selected === "tecnologias" ? `${theme.background}` : "",
-        }}
-        className={`flex gap-2 items-center justify-center md:justify-start px-2 w-full   rounded-3xl border-2 border-transparent transition-all hover:scale-105`}
-        href="#Tecnologias"
-        onClick={() => setSelected("tecnologias")}
-      >
-        <div className="flex h-12 justify-center items-center">
-          <IconTools className="flex justify-center items-center  " />
-        </div>
-        <span
-          style={{
-            color: selected === "tecnologias" ? theme.theme : theme.textColor,
-          }}
-          className={` text-center hidden md:flex font-bold transition-all duration-300 text-sm`}
-        >
-          {technologies}
-        </span>
-      </a>
-
-      <a
-        aria-label={contact}
-        style={{
-          color: selected === "contactos" ? theme.theme : "",
-          border: `2px solid ${theme.theme}`,
-          background: selected === "contactos" ? `${theme.background}` : "",
-        }}
-        className={`flex gap-2 items-center justify-center md:justify-start px-2 w-full   rounded-3xl border-2 border-transparent transition-all hover:scale-105`}
-        href="#Contactos"
-        onClick={() => setSelected("contactos")}
-      >
-        <div className="flex h-12 justify-center items-center">
-          <IconMailFast
-            size={30}
-            className="flex justify-center item-center  "
-          />
-        </div>
-        <span
-          style={{
-            color: selected === "contactos" ? theme.theme : theme.textColor,
-          }}
-          className={` text-center hidden md:flex font-bold transition-all duration-300 text-sm`}
-        >
-          {contact}
-        </span>
-      </a>
-    </div>
+        return (
+          <a
+            key={item.id}
+            href={item.href}
+            onClick={() => setSelected(item.id)}
+            aria-label={item.label}
+            style={{
+              border: `2px solid ${isSelected ? theme.textColor : theme.theme}`,
+              background: isSelected ? theme.theme : theme.background,
+            }}
+            className="flex gap-2 items-center justify-center md:justify-start px-2 w-full rounded-3xl transition-all hover:scale-105"
+          >
+            <div className="flex h-12 justify-center items-center">
+              <Icon
+                fill={isSelected ? theme.textColor : theme.theme}
+                style={{ color: isSelected ? theme.textColor : theme.theme }}
+              />
+            </div>
+            <span
+              style={{ color: isSelected ? theme.textColor : theme.theme }}
+              className="hidden md:block text-center font-bold transition-all duration-300 text-sm"
+            >
+              {item.label}
+            </span>
+          </a>
+        );
+      })}
+    </nav>
   );
 }
 

@@ -8,7 +8,6 @@ import { Toaster } from "react-hot-toast";
 import { cn } from "@/lib/utils";
 import Trabajos from "@/components/trabajos/trabajos";
 import Caracteristicas from "@/components/caracteristicas/caracteristicas";
-import dynamic from "next/dynamic";
 import Resume from "@/components/resume/resume";
 import Detalle from "@/components/detalle/detalle";
 import Comentarios from "@/components/coments/coments";
@@ -65,12 +64,7 @@ export default function Home() {
       >
         <Background />
 
-        <div
-          style={{
-            boxShadow: `0 0 10px 5px ${theme.theme}`,
-          }}
-          className="md:h-full md:max-w-[15vw] w-full max-h-screen overflow-y-hidden flex items-center justify-center"
-        >
+        <div className="md:h-full md:max-w-[15vw] w-full max-h-screen overflow-y-hidden flex items-center justify-center">
           <Header data={content.Header} />
         </div>
 
