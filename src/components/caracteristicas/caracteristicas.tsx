@@ -52,7 +52,7 @@ export default function Caracteristicas(props: Props) {
   };
 
   return (
-    <div className="w-4/6">
+    <div className="w-full md:w-4/6">
       <p
         style={{ color: theme.theme }}
         className="font-bold w-full text-4xl text-center md:text-start mb-8 break-words"

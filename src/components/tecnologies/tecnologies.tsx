@@ -148,7 +148,7 @@ function Tecnologias(props: Props) {
   };
 
   return (
-    <div className="w-4/6 flex flex-col gap-4">
+    <div className="w-full md:w-4/6 flex flex-col gap-4">
       <p
         style={{ color: theme.theme }}
         className="font-bold text-4xl text-center md:text-start"

@@ -50,7 +50,7 @@ const AnimatedSection = ({
       initial={{ opacity: 0, x: 100 }}
       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      className="max-w-[80vw] w-full px-4 md:px-8 flex flex-col "
+      className="max-w-[95vw] md:max-w-[70vw] w-full px-4 md:px-8 flex flex-col "
     >
       {children}
     </motion.div>
@@ -80,7 +80,12 @@ export default function Home() {
       >
         <Background />
 
-        <div className="md:h-full max-h-screen overflow-y-hidden flex items-center">
+        <div
+          style={{
+            boxShadow: `0 0 10px 5px ${theme.theme}`,
+          }}
+          className="md:h-full md:max-w-[15vw] w-full max-h-screen overflow-y-hidden flex items-center justify-center"
+        >
           <Header data={content.Header} />
         </div>
 
@@ -91,7 +96,7 @@ export default function Home() {
           )}
         >
           <div id="inicio"></div>
-          <div className="max-w-[80vw] w-full  px-4 md:px-8  flex flex-col">
+          <div className="max-w-[95vw] md:max-w-[70vw] w-full  px-4 md:px-8  flex flex-col">
             <div
               style={{
                 boxShadow: `0 0 10px 5px ${theme.theme}`,
