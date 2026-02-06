@@ -52,16 +52,19 @@ export default function Caracteristicas(props: Props) {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="w-4/6">
       <p
         style={{ color: theme.theme }}
-        className="font-bold w-full text-2xl md:text-4xl text-center md:text-start mb-8"
+        className="font-bold w-full text-4xl text-center md:text-start mb-8 break-words"
       >
         {title}
       </p>
 
       {/* Contenedor Principal del Carrusel */}
-      <div className="relative w-full h-[450px] md:h-[400px] overflow-hidden rounded-3xl border-2 border-Hover bg-black shadow-lg">
+      <div
+        style={{ border: `2px solid ${theme.theme}` }}
+        className="relative w-full h-[450px] md:h-[400px] overflow-hidden rounded-3xl shadow-lg"
+      >
         <AnimatePresence mode="popLayout" custom={direction}>
           <motion.div
             key={index}
@@ -86,25 +89,29 @@ export default function Caracteristicas(props: Props) {
           >
             {/* Título de la característica */}
             <div
-              style={{ color: theme.theme }}
-              className="w-full p-5 font-bold ext-center text-xl md:text-2xl border-b border-white/5 bg-white/5"
+              style={{
+                color: theme.theme,
+                background: `${theme.theme}20`,
+                border: `${theme.theme}50`,
+              }}
+              className="w-full p-5 font-bold text-center text-xl md:text-2xl "
             >
               {caracteristicas[index].titulo}
             </div>
 
             <div className="flex flex-col justify-center md:grid md:grid-cols-2 items-center md:justify-around w-full h-full p-6 md:gap-6">
               {/* Imagen */}
-              <div className="relative flex w-full h-full  flex-shrink-0">
+              <div className="relative py-8  flex w-full h-full items-center  flex-shrink-0">
                 <Image
                   src={caracteristicas[index].imagen}
                   alt={caracteristicas[index].titulo}
                   fill
-                  className="object-contain pointer-events-none select-none"
+                  className="object-contain max-w-full max-h-53 pointer-events-none select-none"
                 />
               </div>
 
               {/* Descripción */}
-              <div className="text-center md:text-left text-md md:text-lg text-white/90 w-full">
+              <div className="text-center md:text-left text-md md:text-lg  w-full">
                 {caracteristicas[index].descripcion}
               </div>
             </div>
@@ -122,7 +129,7 @@ export default function Caracteristicas(props: Props) {
                 setIndex([i, dir]);
               }}
               style={{
-                background: index === i ? theme.theme : "white",
+                background: index === i ? theme.theme : theme.textColor,
                 width: index === i ? "20px" : "10px ",
               }}
               className={`h-2.5 rounded-full transition-all duration-300 ${"bg-white/30 hover:bg-white/50"}`}

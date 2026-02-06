@@ -2,7 +2,7 @@
 
 import content from "@/content/content.json";
 
-import { useEffect, useRef } from "react";
+import { CSSProperties, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 import { cn } from "@/lib/utils";
@@ -50,7 +50,7 @@ const AnimatedSection = ({
       initial={{ opacity: 0, x: 100 }}
       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      className="max-w-4xl w-full px-4 md:px-8 flex flex-col "
+      className="max-w-[80vw] w-full px-4 md:px-8 flex flex-col "
     >
       {children}
     </motion.div>
@@ -70,6 +70,11 @@ export default function Home() {
 
   return (
     <motion.main
+      animate={{
+        fontFamily: theme.fontFamily, // Framer Motion suaviza el cambio de fuente
+      }}
+      transition={{ duration: 1 }}
+      style={{ color: theme.textColor }}
       className={`w-full h-full flex flex-col md:flex-row overflow-x-hidden  relative `}
     >
       <Background />
@@ -79,17 +84,19 @@ export default function Home() {
       </div>
 
       <div
+        style={{ "--theme": theme.theme } as CSSProperties}
         className={cn(
           "scrollContainer w-full gap-20 h-full flex flex-col pb-20  items-center overflow-y-auto  overflow-x-hidden",
         )}
       >
         <div id="inicio"></div>
-        <div className="max-w-4xl w-full px-4 md:px-8  flex flex-col">
+        <div className="max-w-[80vw] w-full  px-4 md:px-8  flex flex-col">
           <div
             style={{
               boxShadow: `0 0 10px 5px ${theme.theme}`,
+              background: theme.background,
             }}
-            className="bg-black h-full w-full p-4 py-12 md:p-10 rounded-3xl flex flex-col"
+            className="h-full w-full p-4 py-12 md:p-10 rounded-3xl flex flex-col items-center"
           >
             <Resume data={content.Resume} />
           </div>
@@ -101,8 +108,9 @@ export default function Home() {
           <div
             style={{
               boxShadow: `0 0 10px 5px ${theme.theme}`,
+              background: theme.background,
             }}
-            className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col"
+            className="h-full w-full py-12  p-4 md:p-10 rounded-3xl flex flex-col items-center"
           >
             <Detalle data={content.Detail} />
           </div>
@@ -113,8 +121,9 @@ export default function Home() {
           <div
             style={{
               boxShadow: `0 0 10px 5px ${theme.theme}`,
+              background: theme.background,
             }}
-            className="  h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col"
+            className="  h-full w-full py-12 p-4 md:p-10 rounded-3xl flex flex-col items-center"
           >
             <Trabajos data={content.Trabajos} />
           </div>
@@ -125,8 +134,9 @@ export default function Home() {
           <div
             style={{
               boxShadow: `0 0 10px 5px ${theme.theme}`,
+              background: theme.background,
             }}
-            className="h-full w-full py-12 bg-black p-4 md:p-10 rounded-3xl flex flex-col"
+            className="h-full w-full py-12 p-4 md:p-10 rounded-3xl flex flex-col items-center"
           >
             <Caracteristicas data={content.Caracteristicas} />
           </div>
@@ -139,8 +149,9 @@ export default function Home() {
             id="Proyectos"
             style={{
               boxShadow: `0 0 10px 5px ${theme.theme}`,
+              background: theme.background,
             }}
-            className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col"
+            className="h-full w-full py-12 p-4 md:p-10 rounded-3xl flex flex-col items-center"
           >
             <Proyectos data={content.Proyects} />
           </div>
@@ -152,8 +163,9 @@ export default function Home() {
           <div
             style={{
               boxShadow: `0 0 10px 5px ${theme.theme}`,
+              background: theme.background,
             }}
-            className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col overflow-x-hidden"
+            className="h-full w-full py-12  p-4 md:p-10 rounded-3xl flex flex-col items-center overflow-x-hidden"
           >
             <Tecnologias data={content.Technologies} />
           </div>
@@ -165,8 +177,9 @@ export default function Home() {
           <div
             style={{
               boxShadow: `0 0 10px 5px ${theme.theme}`,
+              background: theme.background,
             }}
-            className="h-full w-full py-12  bg-black p-4 md:p-10 rounded-3xl flex flex-col"
+            className="h-full w-full py-12 p-4 md:p-10 rounded-3xl flex flex-col items-center"
           >
             <Comentarios data={content.Comments} />
           </div>

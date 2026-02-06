@@ -6,6 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import Item from "./item";
 import { useThemeStore } from "@/store/themeStore";
 
+interface Theme {
+  video: string;
+  textColor: string;
+  theme: string;
+}
 interface Props {
   data: {
     title: string;
@@ -31,7 +36,6 @@ interface Props {
 interface data {
   url: string;
   alt: string;
-  style: string;
 }
 
 // Variantes de animación para las secciones
@@ -63,14 +67,16 @@ const itemVariants = {
     transition: { duration: 1 },
   },
 };
-const theme = useThemeStore((s) => s.theme);
+
 // Componente para cada categoría de tecnologías
 const TechCategory = ({
   title,
   technologies,
+  theme,
 }: {
   title: string;
   technologies: data[];
+  theme: Theme;
 }) => (
   <motion.div
     variants={itemVariants}
@@ -85,7 +91,7 @@ const TechCategory = ({
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      style={{ color: theme.textColor }}
+      style={{ color: theme.theme }}
       className=" h-full text-center  text-2xl md:text-4xl  font-bold mb-4"
     >
       {title}
@@ -125,7 +131,7 @@ const TechCategory = ({
 
 function Tecnologias(props: Props) {
   const { title, frontend, backend, database, tools } = props.data;
-
+  const theme = useThemeStore((s) => s.theme);
   const [mode, setMode] = useState(false);
 
   const allTechnologies = [
@@ -142,10 +148,10 @@ function Tecnologias(props: Props) {
   };
 
   return (
-    <div className="w-full  flex flex-col gap-4">
+    <div className="w-4/6 flex flex-col gap-4">
       <p
         style={{ color: theme.theme }}
-        className="font-bold  text-2xl md:text-4xl text-center md:text-start"
+        className="font-bold text-4xl text-center md:text-start"
       >
         {title}
       </p>
@@ -162,18 +168,22 @@ function Tecnologias(props: Props) {
               className="flex flex-col h-full w-full gap-y-10"
             >
               <TechCategory
+                theme={theme}
                 title={frontend.title}
                 technologies={frontend.technologies}
               />
               <TechCategory
+                theme={theme}
                 title={backend.title}
                 technologies={backend.technologies}
               />
               <TechCategory
+                theme={theme}
                 title={database.title}
                 technologies={database.technologies}
               />
               <TechCategory
+                theme={theme}
                 title={tools.title}
                 technologies={tools.technologies}
               />
@@ -216,10 +226,10 @@ function Tecnologias(props: Props) {
 
       <motion.div
         style={{ background: theme.theme }}
-        className="h-10 flex items-center justify-center hover:opacity-70 rounded-xl cursor-pointer"
+        className="w-full h-12 px-4 py-2 rounded-xl flex items-center justify-center  text-white font-bold cursor-pointer"
         onClick={changeModal}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.97 }}
         transition={{ duration: 0.2 }}
       >
         <motion.div
@@ -227,11 +237,7 @@ function Tecnologias(props: Props) {
           animate={{ rotate: mode ? 180 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          {mode ? (
-            <IconCaretDown fill="white" strokeWidth={2} size={30} />
-          ) : (
-            <IconCaretUp fill="white" strokeWidth={2} size={30} />
-          )}
+          <IconCaretDown fill="white" color="white" strokeWidth={2} size={30} />
         </motion.div>
       </motion.div>
     </div>

@@ -1,13 +1,38 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
 import "./globals.css";
 import content from "@/content/content.json";
 
-// Configuración de Montserrat
-const montserrat = Montserrat({
+import {
+  Cinzel,
+  Righteous,
+  Source_Sans_3,
+  Playfair_Display,
+} from "next/font/google";
+
+const first = Source_Sans_3({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-montserrat",
   display: "swap",
+  variable: "--font-first",
+});
+const second = Cinzel({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-second",
+});
+
+const third = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-third",
+});
+
+const fourth = Righteous({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-fourth",
 });
 
 export const metadata: Metadata = {
@@ -26,8 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`
-          ${montserrat.variable} antialiased w-full h-screen flex flex-col`}
+        className={`${first.variable} ${second.variable} ${third.variable} ${fourth.variable} antialiased w-full h-screen flex flex-col`}
       >
         {children}
       </body>

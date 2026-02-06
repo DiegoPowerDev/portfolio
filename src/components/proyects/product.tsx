@@ -25,13 +25,20 @@ export default function Products(props: Props) {
           style={{
             boxShadow: `0 0 10px 5px ${theme.theme}`,
           }}
-          className={`page1 h-full w-full flex flex-col gap-2 p-2`}
+          className={`page1 h-full w-full flex flex-col gap-2 `}
         >
-          <p className="text-md sm:text-2xl flex justify-center text-center shrink-0">
+          <p
+            style={{
+              color: theme.theme,
+              background: `${theme.theme}20`,
+              border: `${theme.theme}50`,
+            }}
+            className="font-bold p-2 text-md sm:text-2xl flex justify-center text-center shrink-0"
+          >
             {nombre}
           </p>
 
-          <div className="flex-1 min-h-0 flex items-center justify-center">
+          <div className="flex-1 min-h-0 flex items-center justify-center p-2">
             <Image
               src={imagen}
               alt={nombre}
@@ -45,10 +52,10 @@ export default function Products(props: Props) {
           style={{
             boxShadow: `0 0 10px 5px ${theme.theme}`,
           }}
-          className={`page2 h-64 w-full gap-2 grid grid-rows-[auto,auto] p-4 md:p-7 `}
+          className={`page2 h-full w-full flex flex-col justify-between gap-4 p-4 md:p-7 `}
         >
-          <p className="">{descripcion}</p>
-          <div className="w-full grid grid-cols-3 lg:justify-center justify-start gap-4">
+          <p>{descripcion}</p>
+          <div className="w-full flex  lg:justify-center justify-start gap-4">
             {tecnologias.map((element) => {
               const image = element.toLowerCase();
 
@@ -60,7 +67,7 @@ export default function Products(props: Props) {
                   title={element}
                   width={48}
                   height={48}
-                  className="h-12 w-12 rounded-lg transition-all duration-150 hover:scale-125"
+                  className="max-w-full object-contain rounded-lg transition-all duration-150 hover:scale-125"
                 />
               );
             })}

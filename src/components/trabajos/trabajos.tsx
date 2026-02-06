@@ -49,10 +49,20 @@ function Trabajo({ imagenes, nombre, link }: trabajo) {
   };
 
   return (
-    <div className="relative w-full h-[350px] overflow-hidden rounded-3xl border-2 border-Hover bg-black">
+    <div
+      style={{
+        background: theme.background,
+        border: `1px solid ${theme.theme}`,
+      }}
+      className="relative w-full h-[350px] overflow-hidden rounded-3xl"
+    >
       <Link href={link} target="_blank">
         <div
-          style={{ color: theme.theme }}
+          style={{
+            color: theme.theme,
+            background: `${theme.theme}20`,
+            border: `${theme.theme}50`,
+          }}
           className="w-full flex text-lg items-center justify-center p-4 font-bold z-30 pointer-events-none gap-2"
         >
           {nombre} <IconExternalLink />
@@ -80,7 +90,7 @@ function Trabajo({ imagenes, nombre, link }: trabajo) {
                 cambiarImagen(-1);
               }
             }}
-            className="absolute inset-0 cursor-grab active:cursor-grabbing"
+            className="absolute inset-0 cursor-grab py-4 active:cursor-grabbing"
           >
             <div className="relative w-full h-full p-4">
               <Image
@@ -116,18 +126,21 @@ function Trabajo({ imagenes, nombre, link }: trabajo) {
 }
 
 export default function Trabajos(props: Props) {
+  const theme = useThemeStore((s) => s.theme);
   const { title, trabajos } = props.data;
+
   return (
-    <div>
-      <div>
-        <p className="w-full font-bold text-Theme text-2xl md:text-4xl text-center md:text-start mb-10">
-          {title}
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full h-full">
-          {trabajos.map((e, i) => (
-            <Trabajo key={i} {...e} />
-          ))}
-        </div>
+    <div className="w-4/6 h-full flex flex-col items-center">
+      <p
+        style={{ color: theme.theme }}
+        className="w-full font-bold text-4xl text-center md:text-start mb-10"
+      >
+        {title}
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full h-full">
+        {trabajos.map((e, i) => (
+          <Trabajo key={i} {...e} />
+        ))}
       </div>
     </div>
   );

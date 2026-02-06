@@ -66,12 +66,12 @@ function Comentarios(props: Props) {
   const hasValue = (fieldName: string) =>
     informacionFormulario[fieldName]?.length > 0;
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-4/6">
       <motion.p
         style={{ color: theme.theme }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full font-bold text-2xl md:text-4xl text-center md:text-start mb-10"
+        className="w-full font-bold text-4xl text-center md:text-start mb-10"
       >
         {title}
       </motion.p>
@@ -136,10 +136,14 @@ function Comentarios(props: Props) {
           />
         </div>
 
-        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ duration: 0.2 }}
+        >
           <Button
             style={{ background: theme.theme }}
-            className="w-full  h-12 rounded-xl hover:opacity-70 text-white font-bold transition-colors"
+            className="w-full  h-12 rounded-xl  text-white font-bold"
           >
             ENVIAR CORREO
           </Button>

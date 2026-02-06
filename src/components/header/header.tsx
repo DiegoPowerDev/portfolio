@@ -26,17 +26,18 @@ function Header(props: Props) {
   const [selected, setSelected] = useState("inicio");
 
   return (
-    <div className="md:w-48 w-full lg:bg-transparent h-full flex items-center justify-center z-50  sticky ">
+    <div className="md:w-[20vw] w-full lg:bg-transparent h-full flex items-center justify-center z-50  sticky overflow-hidden ">
       <div
         style={{
           boxShadow: `0 0 10px 5px ${theme.theme}`,
+          background: theme.background,
         }}
-        className="md:w-32 bg-black py-4 md:py-10 md:rounded-full grid grid-cols-5 grid-rows-1 w-full md:flex md:flex-col md:gap-4 items-center justify-center"
+        className="md:w-32 py-4 md:py-10 md:rounded-full grid grid-cols-5 grid-rows-1 w-full md:flex md:flex-col md:gap-4 items-center justify-center"
       >
         <div className="flex h-full w-full  justify-center">
           <a
             style={{ color: selected === "inicio" ? theme.theme : "" }}
-            className={`group  grid grid-cols-1 grid-rows-[3fr_2fr] items-center justify-center w-full lg:w-32  rounded-3xl  lg:rounded-full border-2 border-transparent transition-all hover:scale-105`}
+            className={`group  grid grid-cols-1 grid-rows-2 items-center justify-center w-full lg:w-32  rounded-3xl  lg:rounded-full border-2 border-transparent transition-all hover:scale-105`}
             href="#inicio"
             onClick={() => setSelected("inicio")}
           >
@@ -56,7 +57,7 @@ function Header(props: Props) {
         <div className="flex h-full w-full  justify-center">
           <a
             style={{ color: selected === "About" ? theme.theme : "" }}
-            className={`group  grid grid-cols-1 grid-rows-[2fr_1fr]  items-center justify-center w-full lg:w-32  rounded-3xl lg:rounded-full border-2 border-transparent transition-all hover:scale-105`}
+            className={`group grid grid-cols-1 grid-rows-2 items-center justify-center w-full lg:w-32  rounded-3xl lg:rounded-full border-2 border-transparent transition-all hover:scale-105`}
             href="#Detail"
             onClick={() => setSelected("About")}
           >
@@ -76,7 +77,7 @@ function Header(props: Props) {
         <div className="flex h-full w-full  justify-center">
           <a
             style={{ color: selected === "proyectos" ? theme.theme : "" }}
-            className={`group  grid grid-cols-1 grid-rows-[2fr_1fr]  items-center justify-center w-full lg:w-32  rounded-3xl lg:rounded-full border-2 border-transparent transition-all hover:scale-105`}
+            className={`group   grid grid-cols-1 grid-rows-2  items-center justify-center w-full lg:w-32  rounded-3xl lg:rounded-full border-2 border-transparent transition-all hover:scale-105`}
             href="#Proyectos"
             onClick={() => setSelected("proyectos")}
           >
@@ -99,7 +100,7 @@ function Header(props: Props) {
         <div className="flex h-full w-full  justify-center">
           <a
             style={{ color: selected === "tecnologias" ? theme.theme : "" }}
-            className={`group  grid grid-cols-1 grid-rows-[2fr_1fr]  items-center justify-center w-full lg:w-32  rounded-3xl lg:rounded-full border-2 border-transparent transition-all hover:scale-105`}
+            className={`group   grid grid-cols-1 grid-rows-2  items-center justify-center w-full lg:w-32  rounded-3xl lg:rounded-full border-2 border-transparent transition-all hover:scale-105`}
             href="#Tecnologias"
             onClick={() => setSelected("tecnologias")}
           >
@@ -119,7 +120,7 @@ function Header(props: Props) {
         <div className="flex h-full w-full  justify-center">
           <a
             style={{ color: selected === "contactos" ? theme.theme : "" }}
-            className={`group  grid grid-cols-1 grid-rows-[2fr_1fr]  items-center justify-center w-full lg:w-32  rounded-3xl lg:rounded-full border-2 border-transparent transition-all hover:scale-105`}
+            className={`group   grid grid-cols-1 grid-rows-2  items-center justify-center w-full lg:w-32  rounded-3xl lg:rounded-full border-2 border-transparent transition-all hover:scale-105`}
             href="#Contactos"
             onClick={() => setSelected("contactos")}
           >

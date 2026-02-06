@@ -12,10 +12,10 @@ function Detalle(props: Props) {
   const theme = useThemeStore((s) => s.theme);
 
   return (
-    <div className="h-full w-full flex flex-col gap-4 items-center md:gap-8 ">
+    <div className="h-full w-4/6 flex flex-col gap-4 items-center md:gap-8 ">
       <p
         style={{ color: theme.theme }}
-        className="font-bold w-full  text-2xl md:text-4xl text-center md:text-start"
+        className="font-bold w-full pb-4 text-4xl text-center md:text-start"
       >
         {title}
       </p>

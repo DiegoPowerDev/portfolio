@@ -151,44 +151,36 @@
       "technologies": [
         {
           "url": "/html.svg",
-          "alt": "Html",
-          "style": "Icono1"
+          "alt": "Html"
         },
         {
           "url": "/css.svg",
-          "alt": "Css",
-          "style": "Icono2"
+          "alt": "Css"
         },
         {
           "url": "/javascript.svg",
-          "alt": "Javascript",
-          "style": "Icono3"
+          "alt": "Javascript"
         },
         {
           "url": "/react.svg",
-          "alt": "React",
-          "style": "Icono4"
+          "alt": "React"
         },
         {
           "url": "/nextjs.svg",
-          "alt": "Nextjs",
-          "style": "Icono5"
+          "alt": "Nextjs"
         },
 
         {
           "url": "/typescript.svg",
-          "alt": "Typescript",
-          "style": "Icono6"
+          "alt": "Typescript"
         },
         {
           "url": "/react.svg",
-          "alt": "React Native",
-          "style": "Icono7"
+          "alt": "React Native"
         },
         {
           "url": "/wordpress.svg",
-          "alt": "Wordpress",
-          "style": "Icono8"
+          "alt": "Wordpress"
         }
       ]
     },
@@ -197,34 +189,28 @@
       "technologies": [
         {
           "url": "/python.svg",
-          "alt": "Python",
-          "style": "Icono8"
+          "alt": "Python"
         },
         {
           "url": "/php.svg",
-          "alt": "PHP",
-          "style": "Icono9"
+          "alt": "PHP"
         },
 
         {
           "url": "/laravel.svg",
-          "alt": "Laravel",
-          "style": "Icono10"
+          "alt": "Laravel"
         },
         {
           "url": "/nestjs.svg",
-          "alt": "NestJs",
-          "style": "Icono11"
+          "alt": "NestJs"
         },
         {
           "url": "/java.svg",
-          "alt": "Java",
-          "style": "Icono12"
+          "alt": "Java"
         },
         {
           "url": "/spring.svg",
-          "alt": "Spring",
-          "style": "Icono13"
+          "alt": "Spring"
         }
       ]
     },
@@ -233,23 +219,19 @@
       "technologies": [
         {
           "url": "/firebase.svg",
-          "alt": "Firebase",
-          "style": "Icono14"
+          "alt": "Firebase"
         },
         {
           "url": "/postgresql.svg",
-          "alt": "PostgreSQL",
-          "style": "Icono15"
+          "alt": "PostgreSQL"
         },
         {
           "url": "/mysql.svg",
-          "alt": "MySQL",
-          "style": "Icono16"
+          "alt": "MySQL"
         },
         {
           "url": "/mongodb.svg",
-          "alt": "MongoDB",
-          "style": "Icono17"
+          "alt": "MongoDB"
         }
       ]
     },
@@ -258,34 +240,28 @@
       "technologies": [
         {
           "url": "/googleads.svg",
-          "alt": "Google Ads",
-          "style": "Icono18"
+          "alt": "Google Ads"
         },
         {
           "url": "/googleanalytics.svg",
-          "alt": "Google Analytics",
-          "style": "Icono18"
+          "alt": "Google Analytics"
         },
 
         {
           "url": "/tailwind.svg",
-          "alt": "Tailwind",
-          "style": "Icono19"
+          "alt": "Tailwind"
         },
         {
           "url": "/github.svg",
-          "alt": "Github",
-          "style": "Icono20"
+          "alt": "Github"
         },
         {
           "url": "/docker.svg",
-          "alt": "Docker",
-          "style": "Icono21"
+          "alt": "Docker"
         },
         {
           "url": "/postman.svg",
-          "alt": "Postman",
-          "style": "Icono21"
+          "alt": "Postman"
         }
       ]
     }

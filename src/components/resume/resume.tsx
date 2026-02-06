@@ -4,6 +4,7 @@ import {
   IconBrandLinkedinFilled,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface Props {
   data: {
@@ -41,12 +42,10 @@ function Resume(props: Props) {
   const theme = useThemeStore((s) => s.theme);
 
   return (
-    <div className="h-full w-full grid grid-rows-[auto,auto] grid-cols-1 md:grid-rows-1 md:grid-cols-[3fr,4fr] items-center justify-center">
-      <div className="h-full gap-2 w-full grid grid-rows-[3fr,2fr,2fr] items-center justify-center p-5 ">
-        <div className="h-full w-full grid grid-rows-[2fr,1fr] gap-2 md:gap-7 font-bold items-center">
-          <p className="font-bold w-full text-4xl text-center md:text-start">
-            {first.name}
-          </p>
+    <div className="h-full w-4/6 grid grid-rows-[auto,auto] grid-cols-1 md:grid-rows-1 md:grid-cols-[3fr,4fr] items-center justify-center">
+      <div className="h-full gap-2 w-full flex flex-col items-center justify-center p-5 ">
+        <div className="h-full w-full flex flex-col gap-2 md:gap-7 font-bold items-center">
+          <p className="font-bold w-full text-4xl text-center ">{first.name}</p>
           <p style={{ color: theme.theme }} className=" text-xl ">
             {first.work}
           </p>
@@ -73,28 +72,52 @@ function Resume(props: Props) {
           </div>
         </div>
 
-        <div className="w-full flex justify-center items-center ">
-          <div className="w-full grid  justify-center ">
-            <a
+        <div className="w-full flex pt-10 justify-center items-center ">
+          <div className="w-full flex justify-center ">
+            <motion.a
               href={links.github.detail}
-              className="flex flex-col items-center  hover:scale-125 transition-all group duration-300"
+              className="flex flex-col items-center"
+              whileHover={{
+                scale: 1.25,
+                color: theme.theme,
+                fill: theme.theme,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+              }}
+              style={{ color: theme.textColor, fill: theme.textColor }}
             >
-              <IconBrandGithubFilled className="h-10 w-10 md:h-16 md:w-16  group-hover:fill-Hover" />
-              <div className="text-center group-hover:text-Hover ">
-                {links.github.title}
-              </div>
-            </a>
+              <IconBrandGithubFilled
+                className="h-10 w-10 md:h-16 md:w-16"
+                style={{ fill: "inherit" }}
+              />
+              <div className="text-center">{links.github.title}</div>
+            </motion.a>
           </div>
           <div className="w-full grid  justify-center ">
-            <a
+            <motion.a
+              whileHover={{
+                scale: 1.25,
+                color: theme.theme,
+                fill: theme.theme,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+              }}
+              style={{ color: theme.textColor, fill: theme.textColor }}
               href={links.linkedin.detail}
-              className="flex flex-col items-center hover:scale-125 transition-all group duration-300"
+              className="flex flex-col items-center"
             >
-              <IconBrandLinkedinFilled className="h-10 w-10 md:h-16 md:w-16  group-hover:fill-Hover" />
-              <div className="text-center group-hover:text-Hover">
-                {links.linkedin.title}
-              </div>
-            </a>
+              <IconBrandLinkedinFilled
+                style={{ fill: "inherit" }}
+                className="h-10 w-10 md:h-16 md:w-16"
+              />
+              <div className="text-center">{links.linkedin.title}</div>
+            </motion.a>
           </div>
         </div>
       </div>

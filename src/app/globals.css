@@ -5,27 +5,8 @@
 :root {
 }
 
-/* Tema: #10b981 */
-/* hover: #006045 */
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --textColor: #ededed;
-    --theme: #1ee926;
-    --hover: #67ff6690;
-  }
-} */
-
-body {
-  color: #ededed;
-  font-family: monospace;
-  /* font-family: var(--font-montserrat); */
-}
 html {
   @apply scroll-smooth;
-}
-h1 {
-  font-family: var(--font-montserrat);
 }
 
 /* Proyects*/
@@ -147,8 +128,5 @@ h1 {
 @layer base {
   * {
     @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }

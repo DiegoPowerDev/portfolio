@@ -3,27 +3,45 @@ import { create } from "zustand";
 const themes = [
   {
     video: "/background1.mp4",
-    textColor: "#1A1A1A",
+    background: "#000000",
     theme: "#1ee926",
-    hover: "#67ff6690",
+    textColor: "#fafafa",
+    fontFamily: "var(--font-first)",
   },
   {
     video: "/background2.mp4",
-    textColor: "#1A1A1A",
-    theme: "#1ee926",
-    hover: "#67ff6690",
+    background: "#EEEBE5",
+    theme: "#5A3F2F",
+    textColor: "#000000",
+    fontFamily: "var(--font-second)",
   },
   {
     video: "/background3.mp4",
-    textColor: "#1A1A1A",
-    theme: "#1ee926",
-    hover: "#67ff6690",
+    background: "#000017",
+    theme: "#48a8ff",
+    textColor: "#ffffff",
+    fontFamily: "var(--font-third)",
+  },
+  {
+    video: "/background4.mp4",
+    background: "#02010F",
+    theme: "#B40D10",
+    textColor: "#ffffff",
+    fontFamily: "var(--font-fourth)",
   },
 ];
 
+interface Theme {
+  video: string;
+  background: string;
+  textColor: string;
+  theme: string;
+  fontFamily: string;
+}
+
 interface themeStore {
   position: number;
-  theme: (typeof themes)[0]; // Infiere el tipo automáticamente
+  theme: Theme; // Infiere el tipo automáticamente
   incrementPosition: () => void;
 }
 

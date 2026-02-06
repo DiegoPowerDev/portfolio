@@ -21,10 +21,10 @@ function Proyectos(props: Props) {
   const theme = useThemeStore((s) => s.theme);
 
   return (
-    <div className="h-full w-full flex flex-col gap-8  items-center justify-center content-center ">
+    <div className="h-full w-4/6 flex flex-col gap-8  items-center justify-center content-center ">
       <p
         style={{ color: theme.theme }}
-        className="font-bold w-full text-2xl md:text-4xl text-center md:text-start"
+        className="font-bold w-full text-4xl text-center md:text-start"
       >
         {web.title}
       </p>
