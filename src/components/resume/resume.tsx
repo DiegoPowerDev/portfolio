@@ -42,10 +42,12 @@ function Resume(props: Props) {
   const theme = useThemeStore((s) => s.theme);
 
   return (
-    <div className="h-full w-full md:w-4/6 grid grid-rows-[auto,auto] grid-cols-1 md:grid-rows-1 md:grid-cols-[3fr,4fr] items-center justify-center">
-      <div className="h-full gap-2 w-full flex flex-col items-center justify-center p-5 ">
+    <div className="h-full w-full 2xl:w-4/6 grid grid-rows-[auto,auto] grid-cols-1 md:grid-rows-1 md:grid-cols-[3fr,4fr] items-center justify-center">
+      <div className="h-full gap-2 w-full flex flex-col items-center justify-center md:p-5 ">
         <div className="h-full w-full flex flex-col gap-2 md:gap-7 font-bold items-center">
-          <p className="font-bold w-full text-4xl ">{first.name}</p>
+          <p className="font-bold w-full text-4xl text-center md:text-start">
+            {first.name}
+          </p>
           <p style={{ color: theme.theme }} className=" text-xl ">
             {first.work}
           </p>

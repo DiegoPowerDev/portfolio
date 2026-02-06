@@ -130,7 +130,7 @@ export default function Trabajos(props: Props) {
   const { title, trabajos } = props.data;
 
   return (
-    <div className="w-full md:w-4/6 h-full flex flex-col items-center">
+    <div className="w-full 2xl:w-4/6 h-full flex flex-col items-center">
       <p
         style={{ color: theme.theme }}
         className="w-full font-bold text-4xl text-center md:text-start mb-10"

@@ -79,7 +79,7 @@ function Comentarios(props: Props) {
   const hasValue = (fieldName: string) =>
     informacionFormulario[fieldName]?.length > 0;
   return (
-    <div className="h-full w-full md:w-4/6">
+    <div className="h-full w-full 2xl:w-4/6">
       <motion.p
         style={{ color: theme.theme }}
         initial={{ opacity: 0, y: -20 }}
