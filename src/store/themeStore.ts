@@ -2,28 +2,28 @@ import { create } from "zustand";
 
 const themes = [
   {
-    video: "/background1.mp4",
+    video: "/background1.webm",
     background: "#000000",
     theme: "#1ee926",
     textColor: "#fafafa",
     fontFamily: "var(--font-first)",
   },
   {
-    video: "/background2.mp4",
+    video: "/background2.webm",
     background: "#EEEBE5",
     theme: "#5A3F2F",
     textColor: "#000000",
     fontFamily: "var(--font-second)",
   },
   {
-    video: "/background3.mp4",
+    video: "/background3.webm",
     background: "#000017",
     theme: "#48a8ff",
     textColor: "#ffffff",
     fontFamily: "var(--font-third)",
   },
   {
-    video: "/background4.mp4",
+    video: "/background4.webm",
     background: "#02010F",
     theme: "#B40D10",
     textColor: "#ffffff",
