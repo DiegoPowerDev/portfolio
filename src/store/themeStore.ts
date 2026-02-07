@@ -4,6 +4,7 @@ const themes = [
   {
     video: "/background1.webm",
     poster: "/background1.webp",
+    movil: "/background1movil.webp",
     background: "#000000",
     theme: "#1ee926",
     textColor: "#fafafa",
@@ -12,6 +13,7 @@ const themes = [
   {
     video: "/background2.webm",
     poster: "/background2.webp",
+    movil: "/background2movil.webp",
     background: "#EEEBE5",
     theme: "#5A3F2F",
     textColor: "#000000",
@@ -20,6 +22,7 @@ const themes = [
   {
     video: "/background3.webm",
     poster: "/background3.webp",
+    movil: "/background3movil.webp",
     background: "#000017",
     theme: "#48a8ff",
     textColor: "#ffffff",
@@ -28,6 +31,7 @@ const themes = [
   {
     video: "/background4.webm",
     poster: "/background4.webp",
+    movil: "/background4movil.webp",
     background: "#02010F",
     theme: "#B40D10",
     textColor: "#ffffff",
@@ -42,6 +46,7 @@ interface Theme {
   textColor: string;
   theme: string;
   fontFamily: string;
+  movil: string;
 }
 
 interface themeStore {

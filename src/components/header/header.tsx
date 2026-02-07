@@ -79,19 +79,18 @@ function Header(props: Props) {
             onClick={() => setSelected(item.id)}
             aria-label={item.label}
             style={{
-              border: `2px solid ${isSelected ? theme.textColor : theme.theme}`,
+              border: `2px solid ${isSelected ? theme.background : theme.theme}`,
               background: isSelected ? theme.theme : theme.background,
             }}
             className="flex gap-2 items-center justify-center md:justify-start px-2 w-full rounded-3xl transition-all hover:scale-105"
           >
             <div className="flex h-12 justify-center items-center">
               <Icon
-                fill={isSelected ? theme.textColor : theme.theme}
-                style={{ color: isSelected ? theme.textColor : theme.theme }}
+                style={{ color: isSelected ? theme.background : theme.theme }}
               />
             </div>
             <span
-              style={{ color: isSelected ? theme.textColor : theme.theme }}
+              style={{ color: isSelected ? theme.background : theme.theme }}
               className="hidden md:block text-center font-bold transition-all duration-300 text-sm"
             >
               {item.label}
