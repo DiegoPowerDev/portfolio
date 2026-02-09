@@ -116,13 +116,6 @@
       "title": "PROYECTOS PERSONALES",
       "proyects": [
         {
-          "nombre": "CRIPTO LIVES RATES",
-          "imagen": "/criptoweb.webp",
-          "direccion": "https://criptoweb-portfolio.vercel.app",
-          "descripcion": "Proyecto enfocado en Web Scraping reuniendo datos de los valores actuales de criptomonedas",
-          "tecnologias": ["NestJS", "React", "Playwright", "Tailwind"]
-        },
-        {
           "nombre": "FAST WEB TOOLS",
           "imagen": "/fasttools.webp",
           "direccion": "https://fasttools.vercel.app",

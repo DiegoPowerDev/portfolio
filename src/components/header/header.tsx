@@ -67,7 +67,7 @@ function Header(props: Props) {
     },
   ];
   return (
-    <nav className="p-4 h-full md:py-10 flex w-full md:flex-col md:gap-2 items-center justify-center z-50 sticky overflow-hidden backdrop-blur-lg">
+    <nav className="p-4 h-full md:py-10 flex w-full md:flex-col md:gap-2 items-center justify-center z-50 sticky overflow-hidden backdrop-brightness-50">
       {menuItems.map((item) => {
         const isSelected = selected === item.id;
         const Icon = item.icon;
