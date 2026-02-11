@@ -116,6 +116,13 @@
       "title": "PROYECTOS PERSONALES",
       "proyects": [
         {
+          "nombre": "Image Library",
+          "imagen": "/image-library.webp",
+          "direccion": "https://imagelibrarydev.vercel.app",
+          "descripcion": "Aplicación web para trabajo colaborativo publicitario con biblioteca de imagenes y calendario de eventos",
+          "tecnologias": ["Firebase", "zustand", "NextJs", "Tailwind"]
+        },
+        {
           "nombre": "FAST WEB TOOLS",
           "imagen": "/fasttools.webp",
           "direccion": "https://fasttools.vercel.app",

@@ -1,6 +1,13 @@
 import { useThemeStore } from "@/store/themeStore";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { useState } from "react";
 
 interface Props {
   nombre: string;
@@ -55,23 +62,46 @@ export default function Products(props: Props) {
           className={`page2 h-full w-full flex flex-col justify-between gap-4 p-4 md:p-7 `}
         >
           <p>{descripcion}</p>
-          <div className="w-full flex  lg:justify-center justify-start gap-4">
-            {tecnologias.map((element) => {
-              const image = element.toLowerCase();
+          <TooltipProvider delayDuration={1}>
+            <div className="w-full flex  lg:justify-center justify-start gap-4">
+              {tecnologias.map((element) => {
+                const image = element.toLowerCase();
 
-              return (
-                <Image
-                  key={element}
-                  src={`/${image}.svg`}
-                  alt={element}
-                  title={element}
-                  width={48}
-                  height={48}
-                  className="max-w-full object-contain rounded-lg transition-all duration-150 hover:scale-125"
-                />
-              );
-            })}
-          </div>
+                return (
+                  <>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Image
+                          key={element}
+                          src={`/${image}.svg`}
+                          alt={element}
+                          title={element}
+                          width={48}
+                          height={48}
+                          className="max-w-full object-contain rounded-lg transition-all duration-150 hover:scale-125"
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent
+                        style={{
+                          border: `1px solid ${theme.theme}`,
+                          background: theme.theme,
+                        }}
+                      >
+                        <p
+                          style={{
+                            color: theme.background,
+                          }}
+                          className="select-none"
+                        >
+                          {element}
+                        </p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </>
+                );
+              })}
+            </div>
+          </TooltipProvider>
         </div>
       </div>
     </Link>
