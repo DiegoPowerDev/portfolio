@@ -50,6 +50,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="Xgoe4PBjRaAGVKZB1jElCzCeVBq8ODn4wVtSSN398C0"
+        />
+      </head>
       <body
         className={`${first.variable} ${second.variable} ${third.variable} ${fourth.variable} antialiased w-full h-screen flex flex-col`}
       >
