@@ -64,40 +64,38 @@ export default function Products(props: Props) {
           <p>{descripcion}</p>
           <TooltipProvider delayDuration={1}>
             <div className="w-full flex  lg:justify-center justify-start gap-4">
-              {tecnologias.map((element) => {
+              {tecnologias.map((element, i) => {
                 const image = element.toLowerCase();
 
                 return (
-                  <>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Image
-                          key={element}
-                          src={`/${image}.svg`}
-                          alt={element}
-                          title={element}
-                          width={48}
-                          height={48}
-                          className="max-w-full object-contain rounded-lg transition-all duration-150 hover:scale-125"
-                        />
-                      </TooltipTrigger>
-                      <TooltipContent
+                  <Tooltip key={i}>
+                    <TooltipTrigger asChild>
+                      <Image
+                        key={element}
+                        src={`/${image}.svg`}
+                        alt={element}
+                        title={element}
+                        width={48}
+                        height={48}
+                        className="max-w-full object-contain rounded-lg transition-all duration-150 hover:scale-125"
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent
+                      style={{
+                        border: `1px solid ${theme.theme}`,
+                        background: theme.theme,
+                      }}
+                    >
+                      <p
                         style={{
-                          border: `1px solid ${theme.theme}`,
-                          background: theme.theme,
+                          color: theme.background,
                         }}
+                        className="select-none"
                       >
-                        <p
-                          style={{
-                            color: theme.background,
-                          }}
-                          className="select-none"
-                        >
-                          {element}
-                        </p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </>
+                        {element}
+                      </p>
+                    </TooltipContent>
+                  </Tooltip>
                 );
               })}
             </div>

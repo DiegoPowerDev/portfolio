@@ -130,11 +130,11 @@
           "tecnologias": ["NestJs", "NextJs", "Tailwind"]
         },
         {
-          "nombre": "SCREEN SHARER",
-          "imagen": "/screensharer.webp",
-          "direccion": "https://dev-screensharer.vercel.app",
-          "descripcion": "Aplicación web para compartir tu pantalla en tiempo real con otra persona utilizando comunicación peer-to-peer y websockets",
-          "tecnologias": ["NestJS", "NextJs", "Tailwind", "Socketio"]
+          "nombre": "FAST QR GENERATOR",
+          "imagen": "/fastqr.webp",
+          "direccion": "https://fastqrgenerator.vercel.app",
+          "descripcion": "Aplicación web para generación de QRs para URLs o redes WI-FI",
+          "tecnologias": ["NextJs", "Zustand", "Tailwind"]
         },
         {
           "nombre": "Notes App",
