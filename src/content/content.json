@@ -1,28 +1,43 @@
 {
   "metadata": {
-    "title": "Diego Portfolio",
-    "description": "My portfolio created with Next.js and Tailwind CSS",
+    "title": "Diego Torres | Fullstack Developer & Web Optimization Specialist",
+    "applicationName": "Diego Portfolio",
+    "description": "Desarrollador Fullstack especializado en Next.js, WordPress y optimización SEO. Transformo ideas en productos digitales de alto rendimiento y escalables.",
     "authors": [
       {
         "name": "Diego Torres",
         "url": "https://diegotorres-portfoliodev.vercel.app"
       }
     ],
+    "keywords": [
+      "Fullstack Developer",
+      "Next.js",
+      "WordPress Specialist",
+      "SEO Optimization",
+      "React Developer",
+      "Diego Torres"
+    ],
     "openGraph": {
-      "title": "My Portfolio",
-      "description": "Portfolio created by Diego Torres",
+      "title": "Diego Torres | Portfolio Profesional",
+      "description": "Explora mis proyectos y experiencia en desarrollo web moderno. Especialista en crear soluciones digitales y publicitarias eficientes.",
       "url": "https://diegotorres-portfoliodev.vercel.app",
-      "siteName": "Diego Torres Portfolio",
+      "siteName": "Diego Torres Dev",
       "images": [
         {
-          "url": "/icon.ico",
+          "url": "/logo.webp",
           "width": 1200,
           "height": 630,
-          "alt": "Portfolio logo"
+          "alt": "Diego Torres Portfolio - Fullstack Developer"
         }
       ],
-      "locale": "en_US",
+      "locale": "es_MX",
       "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Diego Torres | Fullstack Developer",
+      "description": "Desarrollador Fullstack especializado en Next.js y WordPress.",
+      "images": ["/logo.webp"]
     }
   },
   "Header": {
