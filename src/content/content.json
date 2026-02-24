@@ -131,26 +131,47 @@
       "title": "PROYECTOS PERSONALES",
       "proyects": [
         {
+          "nombre": "Fast PDF Master",
+          "imagen": "/fast-pdf.webp",
+          "direccion": "https://imagelibrarydev.vercel.app",
+          "descripcion": "Aplicación web edición de archivos PDF, integrando api de Acrobat Services y Cloudflare R2",
+          "tecnologias": ["cloudflare", "Tailwind", "adobe"]
+        },
+        {
+          "nombre": "FAST QR GENERATOR",
+          "imagen": "/fast-qr.webp",
+          "direccion": "https://fastqrgenerator.vercel.app",
+          "descripcion": "Aplicación web para generación de QRs para URLs o redes WI-FI",
+          "tecnologias": ["NextJs", "Zustand", "Tailwind"]
+        },
+        {
           "nombre": "Image Library",
           "imagen": "/image-library.webp",
           "direccion": "https://imagelibrarydev.vercel.app",
-          "descripcion": "Aplicación web para trabajo colaborativo publicitario con biblioteca de imagenes y calendario de eventos",
-          "tecnologias": ["Firebase", "zustand", "NextJs", "Tailwind"]
+          "descripcion": "Aplicación web para trabajo colaborativo publicitario con biblioteca de imagenes y calendario de eventos implementando guardado de imagenes en Cloudinary",
+          "tecnologias": [
+            "Firebase",
+            "zustand",
+            "NextJs",
+            "Tailwind",
+            "cloudinary"
+          ]
         },
         {
           "nombre": "FAST WEB TOOLS",
           "imagen": "/fasttools.webp",
           "direccion": "https://fasttools.vercel.app",
-          "descripcion": "Aplicación web con varias herramientas creadas utilizando funciones nativas del navegador",
-          "tecnologias": ["NestJs", "NextJs", "Tailwind"]
+          "descripcion": "Aplicación web con herramientas para desarrollo rapido, integrando servicios como Firebase, Cloudinary y Cloudflare R2",
+          "tecnologias": [
+            "NestJs",
+            "NextJs",
+            "Tailwind",
+            "cloudflare",
+            "cloudinary",
+            "Firebase"
+          ]
         },
-        {
-          "nombre": "FAST QR GENERATOR",
-          "imagen": "/fastqr.webp",
-          "direccion": "https://fastqrgenerator.vercel.app",
-          "descripcion": "Aplicación web para generación de QRs para URLs o redes WI-FI",
-          "tecnologias": ["NextJs", "Zustand", "Tailwind"]
-        },
+
         {
           "nombre": "Notes App",
           "imagen": "/notesapp.webp",

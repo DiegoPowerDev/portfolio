@@ -63,7 +63,7 @@ export default function Products(props: Props) {
         >
           <p>{descripcion}</p>
           <TooltipProvider delayDuration={1}>
-            <div className="w-full flex  lg:justify-center justify-start gap-4">
+            <div className="w-full grid grid-cols-4 items-center gap-4">
               {tecnologias.map((element, i) => {
                 const image = element.toLowerCase();
 
