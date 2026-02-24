@@ -215,10 +215,6 @@
         {
           "url": "/react.svg",
           "alt": "React Native"
-        },
-        {
-          "url": "/wordpress.svg",
-          "alt": "Wordpress"
         }
       ]
     },
@@ -300,6 +296,18 @@
         {
           "url": "/postman.svg",
           "alt": "Postman"
+        },
+        {
+          "url": "/wordpress.svg",
+          "alt": "Wordpress"
+        },
+        {
+          "url": "/cloudflare.svg",
+          "alt": "cloudflare"
+        },
+        {
+          "url": "/cloudinary.svg",
+          "alt": "cloudinary"
         }
       ]
     }
