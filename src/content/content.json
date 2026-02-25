@@ -3,6 +3,9 @@
     "title": "Diego Torres | Fullstack Developer & Web Optimization Specialist",
     "applicationName": "Diego Portfolio",
     "description": "Desarrollador Fullstack especializado en Next.js, WordPress y optimización SEO. Transformo ideas en productos digitales de alto rendimiento y escalables.",
+    "alternates": {
+      "canonical": "https://diegotorres-portfoliodev.vercel.app"
+    },
     "authors": [
       {
         "name": "Diego Torres",
