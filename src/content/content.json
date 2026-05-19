@@ -136,7 +136,7 @@
         {
           "nombre": "Fast PDF Master",
           "imagen": "/fast-pdf.webp",
-          "direccion": "https://imagelibrarydev.vercel.app",
+          "direccion": "https://fastpdfmaster.vercel.app",
           "descripcion": "Aplicación web edición de archivos PDF, integrando api de Acrobat Services y Cloudflare R2",
           "tecnologias": ["cloudflare", "Tailwind", "adobe"]
         },
