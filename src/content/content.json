@@ -141,9 +141,9 @@
           "tecnologias": ["cloudflare", "Tailwind", "adobe"]
         },
         {
-          "nombre": "FAST QR GENERATOR",
+          "nombre": "FAST QR Master",
           "imagen": "/fast-qr.webp",
-          "direccion": "https://fastqrgenerator.vercel.app",
+          "direccion": "https://fastqrmaster.vercel.app",
           "descripcion": "Aplicación web para generación de QRs para URLs o redes WI-FI",
           "tecnologias": ["NextJs", "Zustand", "Tailwind"]
         },
