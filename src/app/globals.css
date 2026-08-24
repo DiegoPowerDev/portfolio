@@ -103,10 +103,10 @@ html {
     transform: translate(0, 0) scale(1);
   }
   33% {
-    transform: translate(80px, 60px) scale(1.15);
+    transform: translate(180px, 160px) scale(1.15);
   }
   66% {
-    transform: translate(-40px, 100px) scale(0.95);
+    transform: translate(-40px, 400px) scale(0.95);
   }
 }
 
@@ -116,31 +116,17 @@ html {
     transform: translate(0, 0) scale(1);
   }
   33% {
-    transform: translate(-70px, 90px) scale(1.1);
+    transform: translate(-100px, -190px) scale(1.1);
   }
   66% {
-    transform: translate(50px, -50px) scale(0.9);
-  }
-}
-
-@keyframes mesh-drift-3 {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(60px, -80px) scale(1.2);
+    transform: translate(-350px, -150px) scale(0.9);
   }
 }
 
 .animate-mesh-drift-1 {
-  animation: mesh-drift-1 20s ease-in-out infinite;
+  animation: mesh-drift-1 6s ease-in-out infinite;
 }
 
 .animate-mesh-drift-2 {
-  animation: mesh-drift-2 26s ease-in-out infinite;
-}
-
-.animate-mesh-drift-3 {
-  animation: mesh-drift-3 24s ease-in-out infinite;
+  animation: mesh-drift-2 8s ease-in-out infinite;
 }

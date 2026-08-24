@@ -5,6 +5,7 @@ import { Mail, Send, Loader2, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { toast } from "react-hot-toast";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -20,22 +21,31 @@ export default function Contact() {
       name: formData.get("name"),
       email: formData.get("email"),
       message: formData.get("message"),
+      website: formData.get("website"),
     };
+    const sendEmail = async () => {
+      try {
+        const res = await fetch("/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+        const data = await res.json();
 
-      if (!res.ok) throw new Error("Failed to send message");
-
-      setStatus("success");
-      e.currentTarget.reset();
-    } catch {
-      setStatus("error");
-    }
+        if (!res.ok) {
+          throw new Error(data.error || "Failed to send message");
+        }
+        setStatus("success");
+      } catch (error: any) {
+        setStatus("error");
+      }
+    };
+    toast.promise(sendEmail(), {
+      loading: "Sending message......",
+      success: "Message sent, I will get in touch with you shortly.!",
+      error: (err: { message: string }) => `Error: ${err.message}`,
+    });
   }
 
   return (
@@ -77,7 +87,12 @@ export default function Contact() {
             </div>
             <div className="hidden">
               <label htmlFor="website">website</label>
-              <input id="website" />
+              <input
+                id="website"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+              />
             </div>
             <div className="flex flex-col gap-1.5">
               <label htmlFor="email" className="text-sm ">
@@ -110,7 +125,7 @@ export default function Contact() {
 
           {status === "error" && (
             <p className="text-xs text-red-400">
-              Something went wrong. Please try again or email me directly at{" "}
+              Something went wrong. Please try again or email me directly at
               <a href="mailto:diegopacherres15@gmail.com" className="underline">
                 diegopacherres15@gmail.com
               </a>

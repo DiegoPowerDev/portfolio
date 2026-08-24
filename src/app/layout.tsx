@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import MeshGradient from "@/components/animations/gradient";
+import { Toaster } from "react-hot-toast";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -54,6 +55,7 @@ export default function RootLayout({
       >
         <MeshGradient />
         {children}
+        <Toaster />
       </body>
       <Analytics />
     </html>

@@ -8,7 +8,6 @@ export async function POST(request: NextRequest) {
     if (website) {
       return NextResponse.json({ message: "ok" }, { status: 200 });
     }
-    // Validación básica
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Todos los campos son requeridos" },
@@ -16,7 +15,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Configurar el transportador de nodemailer
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {

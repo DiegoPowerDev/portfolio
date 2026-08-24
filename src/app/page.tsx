@@ -1,4 +1,5 @@
 import FadeIn from "@/components/animations/fade-in";
+import EmberParticles from "@/components/animations/animation-particles";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
@@ -11,11 +12,10 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex w-full flex-col items-center gap-52 px-4 py-16">
+      <main className="flex w-full flex-col items-center gap-24 md:gap-40 px-4 py-16">
+        <EmberParticles />
         <PersonalData />
-        <FadeIn>
-          <Experience />
-        </FadeIn>
+        <Experience />
         <FadeIn>
           <Proyects />
         </FadeIn>

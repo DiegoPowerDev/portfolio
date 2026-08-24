@@ -26,7 +26,7 @@ export default function Header() {
       <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4 ">
         <Link
           href="#about"
-          className="flex items-center gap-1.5 text-3xl font-semibold tracking-tight py-4"
+          className="flex items-center gap-1.5 text-3xl font-semibold outline-none  tracking-tight py-4"
         >
           <span className="text-white">Diego</span>
           <span className="text-lime-400">Torres</span>
@@ -39,7 +39,7 @@ export default function Header() {
                 <a
                   onClick={() => setSection(item.url)}
                   href={item.url}
-                  className={`font-bold py-4 ${section === item.url && "text-lime-400 "}`}
+                  className={`font-bold outline-none hover:underline py-4 ${section === item.url && "text-lime-400 "}`}
                 >
                   {item.title}
                 </a>

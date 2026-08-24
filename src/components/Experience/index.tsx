@@ -58,11 +58,11 @@ export default function Experience() {
           <h2 className="text-4xl font-medium">EXPERIENCE</h2>
         </div>
         <div className="relative">
-          <div className="absolute left-[15px] top-2 bottom-2 w-[2px] bg-neutral-800" />
+          <div className="absolute left-[15px] top-2 bottom-2 w-[2px] bg-lime-500" />
 
           {experiences.map((exp, i) => (
             <div key={i} className="relative flex gap-5 pb-10 last:pb-0">
-              <div className="relative z-10 flex-shrink-0 w-8 h-8 rounded-full bg-neutral-900 border border-neutral-700 flex items-center justify-center">
+              <div className="relative z-10 flex-shrink-0 w-8 h-8 rounded-full bg-black border border-neutral-500 flex items-center justify-center">
                 <div className="w-2 h-2 rounded-full bg-lime-400" />
               </div>
 
