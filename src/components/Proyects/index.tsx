@@ -79,16 +79,17 @@ export default function Projects() {
 
       <ul className="grid grid-cols-1 sm:grid-cols-2  gap-4">
         {projects.map((project, i) => (
-          <FadeIn key={project.name} delay={i * 0.1}>
-            <motion.li
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className={cn(
-                "group relative flex flex-col rounded-xl border border-neutral-800 bg-[#0F1318]",
-                "overflow-hidden h-full transition-colors duration-200 hover:shadow-[0_0_24px_8px_rgba(163,230,53,0.25)]",
-                "hover:border-lime-400/40",
-              )}
-            >
+          <motion.li
+            key={i}
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className={cn(
+              "group relative flex flex-col rounded-xl border border-neutral-800 bg-[#0F1318]",
+              "overflow-hidden h-full transition-colors duration-200 hover:shadow-[0_0_24px_8px_rgba(163,230,53,0.25)]",
+              "hover:border-lime-400/40",
+            )}
+          >
+            <FadeIn key={project.name} delay={i * 0.1}>
               <div className="aspect-video max-h-64 bg-neutral-900 flex  justify-center text-neutral-600 text-xs">
                 <Image
                   src={project.image}
@@ -164,8 +165,8 @@ export default function Projects() {
                   )}
                 </div>
               </div>
-            </motion.li>
-          </FadeIn>
+            </FadeIn>
+          </motion.li>
         ))}
       </ul>
     </div>

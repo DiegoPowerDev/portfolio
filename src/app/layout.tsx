@@ -2,24 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import content from "@/content/content.json";
 import { Analytics } from "@vercel/analytics/next";
-import { Inter, Playfair_Display } from "next/font/google";
-import { cn } from "@/lib/utils";
 import MeshGradient from "@/components/animations/gradient";
 import { Toaster } from "react-hot-toast";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
 export const metadata: Metadata = {
   title: content.metadata.title,
   applicationName: content.metadata.applicationName,

@@ -37,11 +37,12 @@ export default function PersonalData() {
           <div className="relative  rounded-full p-[3px] bg-gradient-to-br from-lime-400 to-lime-500 shadow-[0_0_25px_rgba(163,230,53,0.45)]">
             <div className="rounded-full h-64 w-64 overflow-hidden bg-neutral-900">
               <Image
+                fetchPriority="high"
                 src="/foto.webp"
                 width={300}
                 height={300}
                 alt="foto personal"
-                className="object-fill w-full h-full"
+                className="object-cover w-full h-full"
               />
             </div>
           </div>
@@ -82,7 +83,7 @@ export default function PersonalData() {
               width={300}
               height={300}
               alt="foto personal"
-              className="object-fill w-full h-full"
+              className="object-cover w-full h-full"
             />
           </div>
         </div>
