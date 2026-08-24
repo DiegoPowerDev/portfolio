@@ -4,6 +4,7 @@ import content from "@/content/content.json";
 import { Analytics } from "@vercel/analytics/next";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import MeshGradient from "@/components/animations/gradient";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -51,6 +52,7 @@ export default function RootLayout({
       <body
         className={`antialiased w-full overflow-x-hidden flex flex-col bg-[#0B0E12] text-white`}
       >
+        <MeshGradient />
         {children}
       </body>
       <Analytics />

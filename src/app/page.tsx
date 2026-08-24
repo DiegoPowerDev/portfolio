@@ -1,3 +1,4 @@
+import FadeIn from "@/components/animations/fade-in";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
@@ -12,10 +13,18 @@ export default function Home() {
       <Header />
       <main className="flex w-full flex-col items-center gap-52 px-4 py-16">
         <PersonalData />
-        <Experience />
-        <Proyects />
-        <Skills />
-        <Contact />
+        <FadeIn>
+          <Experience />
+        </FadeIn>
+        <FadeIn>
+          <Proyects />
+        </FadeIn>
+        <FadeIn>
+          <Skills />
+        </FadeIn>
+        <FadeIn>
+          <Contact />
+        </FadeIn>
       </main>
       <Footer />
     </>

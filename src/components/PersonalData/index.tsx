@@ -1,5 +1,4 @@
 import SocialLinks from "../SocialLinks";
-import { Button } from "../ui/button";
 
 const mainTechnologies: string[] = [
   "Next.js",

@@ -1,6 +1,10 @@
+"use client";
+import { motion } from "framer-motion";
 import { ExternalLink, Github, Folder, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import FadeIn from "../animations/fade-in";
+import { cn } from "@/lib/utils";
 
 interface Project {
   name: string;
@@ -74,87 +78,94 @@ export default function Projects() {
       <p className="">Featured projects I&apos;ve built and contributed to.</p>
 
       <ul className="grid grid-cols-1 sm:grid-cols-2  gap-4">
-        {projects.map((project) => (
-          <li
-            key={project.name}
-            className="flex flex-col rounded-xl border border-neutral-500 bg-[#0F1318] overflow-hidden"
-          >
-            <div className="aspect-video max-h-64 bg-neutral-900 flex  justify-center text-neutral-600 text-xs">
-              <Image
-                src={project.image}
-                width={500}
-                height={500}
-                alt="project name"
-                className="object-contain"
-              />
-            </div>
-
-            <div className="flex flex-col gap-2 p-4 flex-1">
-              <div className="flex items-baseline justify-between gap-2">
-                <h3 className="flex items-center gap-2 font-medium text-white text-xl">
-                  <span>
-                    <Code2 size={20} />
-                  </span>
-                  {project.name}
-                </h3>
+        {projects.map((project, i) => (
+          <FadeIn key={project.name} delay={i * 0.1}>
+            <motion.li
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className={cn(
+                "group relative flex flex-col rounded-xl border border-neutral-800 bg-[#0F1318]",
+                "overflow-hidden h-full transition-colors duration-200 hover:shadow-[0_0_24px_8px_rgba(163,230,53,0.25)]",
+                "hover:border-lime-400/40",
+              )}
+            >
+              <div className="aspect-video max-h-64 bg-neutral-900 flex  justify-center text-neutral-600 text-xs">
+                <Image
+                  src={project.image}
+                  width={500}
+                  height={500}
+                  alt="project name"
+                  className="object-contain"
+                />
               </div>
 
-              <dl className=" text-neutral-300 leading-relaxed space-y-0.5">
-                <div>
-                  <dt className="inline text-lime-500">Problem: </dt>
-                  <dd className="inline">{project.problem}</dd>
+              <div className="flex flex-col gap-2 p-4 flex-1">
+                <div className="flex items-baseline justify-between gap-2">
+                  <h3 className="flex items-center gap-2 font-medium text-white text-xl">
+                    <span>
+                      <Code2 size={20} />
+                    </span>
+                    {project.name}
+                  </h3>
                 </div>
-                <div>
-                  <dt className="inline text-lime-500">Role: </dt>
-                  <dd className="inline">{project.role}</dd>
-                </div>
-                <div>
-                  <dt className="inline text-lime-500">Result: </dt>
-                  <dd className="inline">{project.result}</dd>
-                </div>
-              </dl>
 
-              <ul className="flex flex-wrap gap-1.5 pt-1">
-                {project.stack.map((tech) => (
-                  <li
-                    key={tech}
-                    className="text-sm px-2 py-0.5 rounded-full border border-lime-400/30 text-lime-400 cursor-pointer hover:bg-lime-400 hover:text-black duration-300"
-                  >
-                    {tech}
-                  </li>
-                ))}
-              </ul>
+                <dl className=" text-neutral-300 leading-relaxed space-y-0.5">
+                  <div>
+                    <dt className="inline text-lime-500">Problem: </dt>
+                    <dd className="inline">{project.problem}</dd>
+                  </div>
+                  <div>
+                    <dt className="inline text-lime-500">Role: </dt>
+                    <dd className="inline">{project.role}</dd>
+                  </div>
+                  <div>
+                    <dt className="inline text-lime-500">Result: </dt>
+                    <dd className="inline">{project.result}</dd>
+                  </div>
+                </dl>
 
-              <div className="flex gap-2 pt-3 mt-auto">
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 h-8 inline-flex items-center justify-center gap-1 w-full font-bold bg-lime-400 text-black hover:bg-lime-400 hover:opacity-80 transition-opacity rounded"
-                >
-                  <ExternalLink size={13} />
-                  Live Demo
-                </a>
-                {project.githubUrl && (
+                <ul className="flex flex-wrap gap-1.5 pt-1">
+                  {project.stack.map((tech) => (
+                    <li
+                      key={tech}
+                      className="text-sm px-2 py-0.5 rounded-full border border-lime-400/30 text-lime-400 cursor-pointer hover:bg-lime-400 hover:text-black duration-300"
+                    >
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex gap-2 pt-3 mt-auto">
                   <a
-                    href={project.githubUrl}
+                    href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1"
+                    className="flex-1 h-8 inline-flex items-center justify-center gap-1 w-full font-bold bg-lime-400 text-black hover:bg-lime-400 hover:opacity-80 transition-opacity rounded"
                   >
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="w-full border-neutral-700 rounded p-4 text-white hover:bg-neutral-900 gap-1"
-                    >
-                      <Github size={13} />
-                      GitHub
-                    </Button>
+                    <ExternalLink size={13} />
+                    Live Demo
                   </a>
-                )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="w-full border-neutral-700 rounded p-4 text-white hover:bg-neutral-900 gap-1"
+                      >
+                        <Github size={13} />
+                        GitHub
+                      </Button>
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
-          </li>
+            </motion.li>
+          </FadeIn>
         ))}
       </ul>
     </div>
