@@ -61,7 +61,7 @@ export default function Experience() {
           <div className="absolute left-[15px] top-2 bottom-2 w-[2px] bg-neutral-800" />
 
           {experiences.map((exp, i) => (
-            <li key={i} className="relative flex gap-5 pb-10 last:pb-0">
+            <div key={i} className="relative flex gap-5 pb-10 last:pb-0">
               <div className="relative z-10 flex-shrink-0 w-8 h-8 rounded-full bg-neutral-900 border border-neutral-700 flex items-center justify-center">
                 <div className="w-2 h-2 rounded-full bg-lime-400" />
               </div>
@@ -96,7 +96,7 @@ export default function Experience() {
                   </ul>
                 </div>
               </div>
-            </li>
+            </div>
           ))}
         </div>
       </div>

@@ -37,11 +37,13 @@ export default function PersonalData() {
       </p>
 
       <div className="flex flex-wrap gap-3 items-center">
-        <Button className="bg-lime-400 p-4 text-black hover:bg-lime-200 transition-colors w-fit">
-          <a href="/CV.pdf" download="CV.pdf">
-            Download CV
-          </a>
-        </Button>
+        <a
+          href="/CV.pdf"
+          download="CV.pdf"
+          className="bg-lime-400 h-8 flex items-center rounded-lg p-4 text-black hover:bg-lime-200 transition-colors w-fit"
+        >
+          Download CV
+        </a>
 
         <Button
           variant="outline"

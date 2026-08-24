@@ -130,15 +130,10 @@ export default function Projects() {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1"
+                  className="flex-1 h-8 inline-flex items-center justify-center gap-1 w-full font-bold bg-lime-400 text-black hover:bg-lime-400 hover:opacity-80 transition-opacity rounded"
                 >
-                  <Button
-                    size="sm"
-                    className="w-full font-bold bg-lime-400 text-black p-4 hover:bg-lime-400 hover:opacity-80 transition-opacity rounded gap-1"
-                  >
-                    <ExternalLink size={13} />
-                    Live Demo
-                  </Button>
+                  <ExternalLink size={13} />
+                  Live Demo
                 </a>
                 {project.githubUrl && (
                   <a
