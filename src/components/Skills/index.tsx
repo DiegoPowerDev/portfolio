@@ -83,7 +83,7 @@ export default function Skills() {
                 >
                   <Image
                     src={skill.icon}
-                    alt={skill.name}
+                    alt={`${skill.name} icon`}
                     width={18}
                     height={18}
                     className="opacity-80 object-contain transition-opacity group-hover:opacity-100"

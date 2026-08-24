@@ -41,7 +41,9 @@ export default function SocialLinks() {
           key={i}
           className="text-white hover:text-lime-400 transition-colors"
         >
-          <a href={e.url}>{e.image}</a>
+          <a aria-label={e.name} href={e.url}>
+            {e.image}
+          </a>
         </li>
       ))}
     </ul>

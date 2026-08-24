@@ -57,7 +57,7 @@ export default function Experience() {
           <BriefcaseBusiness size={20} />
           <h2 className="text-4xl font-medium">EXPERIENCE</h2>
         </div>
-        <ul className="relative">
+        <div className="relative">
           <div className="absolute left-[15px] top-2 bottom-2 w-[2px] bg-neutral-800" />
 
           {experiences.map((exp, i) => (
@@ -77,7 +77,7 @@ export default function Experience() {
                 </div>
                 <p className=" text-neutral-500 mb-2">{exp.location}</p>
 
-                <ul className="flex gap-8 flex-col md:flex-row">
+                <div className="flex gap-8 flex-col md:flex-row">
                   <div className="aspect-video flex justify-center">
                     <Image
                       alt={exp.name}
@@ -87,18 +87,18 @@ export default function Experience() {
                       className="bg-white p-2 rounded-xl object-contain"
                     />
                   </div>
-                  <div className="flex flex-col gap-1">
+                  <ul className="flex flex-col gap-1">
                     {exp.tasks.map((task, j) => (
                       <li key={j} className=" text-neutral-400 leading-relaxed">
                         • {task}
                       </li>
                     ))}
-                  </div>
-                </ul>
+                  </ul>
+                </div>
               </div>
             </li>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
