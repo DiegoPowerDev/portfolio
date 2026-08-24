@@ -79,7 +79,7 @@ export default function Skills() {
               {group.skills.map((skill) => (
                 <li
                   key={skill.name}
-                  className="group cursor-pointer flex items-center gap-2 rounded-lg border border-neutral-600 bg-black px-3 py-2 transition-colors hover:border-lime-400 hover:text-lime-400 "
+                  className="group skill-icon cursor-pointer flex items-center gap-2 rounded-lg border border-neutral-600 bg-black px-3 py-2 transition-colors hover:border-lime-400 hover:text-lime-400 "
                 >
                   <Image
                     src={skill.icon}
@@ -88,7 +88,7 @@ export default function Skills() {
                     height={18}
                     className="opacity-80 object-contain transition-opacity group-hover:opacity-100"
                   />
-                  <span className="text-sm font-mono group-hover:text-lime-400 group-hover:font-bold transition-colors">
+                  <span className=" text-sm font-mono group-hover:text-lime-400 group-hover:font-bold transition-colors">
                     {skill.name}
                   </span>
                 </li>
