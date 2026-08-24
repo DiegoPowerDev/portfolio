@@ -45,12 +45,12 @@ export default function PersonalData() {
           Download CV
         </a>
 
-        <Button
-          variant="outline"
-          className="w-fit p-4 border-neutral-700 text-white hover:bg-neutral-900"
+        <a
+          href="#contact"
+          className="w-fit p-4 border-neutral-700 text-white hover:underline"
         >
-          <a href="#contact">Contact me</a>
-        </Button>
+          Contact me
+        </a>
       </div>
 
       <div className="flex gap-3 items-center pt-2">

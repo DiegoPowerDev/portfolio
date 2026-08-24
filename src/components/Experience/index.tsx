@@ -71,11 +71,11 @@ export default function Experience() {
                   <h3 className="font-semibold text-white">
                     {exp.role} — {exp.name}
                   </h3>
-                  <span className="text-sm text-neutral-500">
+                  <span className="text-sm text-neutral-300">
                     {exp.duration}
                   </span>
                 </div>
-                <p className=" text-neutral-500 mb-2">{exp.location}</p>
+                <p className=" text-neutral-300 mb-2">{exp.location}</p>
 
                 <div className="flex gap-8 flex-col md:flex-row">
                   <div className="aspect-video flex justify-center">

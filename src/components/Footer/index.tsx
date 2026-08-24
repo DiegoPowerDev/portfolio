@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
 
         <div className="flex justify-center pt-2 border-t border-neutral-800/60">
-          <p className=" text-neutral-500">
+          <p className=" text-neutral-300">
             © {year} Diego Torres. All rights reserved.
           </p>
         </div>

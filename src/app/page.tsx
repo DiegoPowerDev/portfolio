@@ -10,13 +10,13 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="flex w-full flex-col items-center gap-52 px-4 py-16">
+      <main className="flex w-full flex-col items-center gap-52 px-4 py-16">
         <PersonalData />
         <Experience />
         <Proyects />
         <Skills />
         <Contact />
-      </div>
+      </main>
       <Footer />
     </>
   );
