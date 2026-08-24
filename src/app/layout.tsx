@@ -2,38 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import content from "@/content/content.json";
 import { Analytics } from "@vercel/analytics/next";
-import {
-  Cinzel,
-  Righteous,
-  Source_Sans_3,
-  Playfair_Display,
-} from "next/font/google";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
 
-const first = Source_Sans_3({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-first",
-});
-const second = Cinzel({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-second",
-});
-
-const third = Playfair_Display({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-third",
-});
-
-const fourth = Righteous({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-fourth",
-});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: content.metadata.title,
@@ -50,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <head>
         <script
           type="application/ld+json"
@@ -77,7 +49,7 @@ export default function RootLayout({
       </head>
 
       <body
-        className={`${first.variable} ${second.variable} ${third.variable} ${fourth.variable} antialiased w-full h-screen flex flex-col`}
+        className={`antialiased w-full overflow-x-hidden flex flex-col bg-[#0B0E12] text-white`}
       >
         {children}
       </body>
