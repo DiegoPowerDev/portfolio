@@ -54,8 +54,8 @@ export default function RootLayout({
         <MeshGradient />
         {children}
         <Toaster />
+        <SpeedInsights />
       </body>
-      <SpeedInsights />
       <Analytics />
     </html>
   );
