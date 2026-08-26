@@ -6,7 +6,6 @@ import MeshGradient from "@/components/animations/gradient";
 import { Toaster } from "react-hot-toast";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata: Metadata = {
   title: content.metadata.title,
   applicationName: content.metadata.applicationName,
@@ -54,7 +53,6 @@ export default function RootLayout({
         <MeshGradient />
         {children}
         <Toaster />
-        <SpeedInsights />
       </body>
       <Analytics />
     </html>
