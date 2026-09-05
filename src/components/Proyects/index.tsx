@@ -82,11 +82,11 @@ const projects: Project[] = [
     name: "Bantel Perú",
     image: "/bantelperu.webp",
     problem:
-      "The existing website suffered from slow loading times, outdated structure, and weak search engine visibility.",
+      "The main company website was built on WordPress + Elementor and suffered from very poor performance due to excessive plugins, slow loading times, and lack of optimization. It also had content and structural issues that affected user experience and SEO.",
     role: "Frontend & WordPress Developer",
-    stack: ["WordPress", "Elementor", "SEO", "Performance"],
+    stack: ["WordPress", "Elementor", "SEO", "Performance", "Google Analytics"],
     result:
-      "Redesigned key sections, improved overall performance and Core Web Vitals, reduced unnecessary plugins, and implemented SEO best practices to enhance organic reach and user experience.",
+      "Completely redesigned key sections of the site, significantly improved performance by reducing unnecessary plugins, and optimized loading speed. Created new sections, updated content according to business needs, implemented proper security practices, regular backups, and ensured correct integration with Google Analytics.",
     liveUrl: "https://bantelperu.com",
   },
 ];

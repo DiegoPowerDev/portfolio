@@ -4,8 +4,8 @@ import SocialLinks from "../SocialLinks";
 const mainTechnologies: string[] = [
   "Next.js",
   "React",
-  "WordPress",
   "TypeScript",
+  "WordPress",
 ];
 
 export default function PersonalData() {
@@ -46,6 +46,7 @@ export default function PersonalData() {
                 height={300}
                 alt="foto personal"
                 className="object-cover w-full h-full"
+                loading="eager"
               />
             </div>
           </div>
