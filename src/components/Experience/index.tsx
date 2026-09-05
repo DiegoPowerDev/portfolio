@@ -81,13 +81,15 @@ export default function Experience() {
                 <p className=" text-neutral-300 mb-2">{exp.location}</p>
 
                 <div className="flex gap-8 flex-col md:flex-row">
-                  <Image
-                    alt={exp.name}
-                    src={exp.image}
-                    width={200}
-                    height={200}
-                    className="bg-white p-2 rounded-xl object-contain"
-                  />
+                  <div className="flex items-center">
+                    <Image
+                      alt={exp.name}
+                      src={exp.image}
+                      height={300}
+                      width={300}
+                      className="bg-white p-2 flex rounded-xl object-contain  h-[120px]"
+                    />
+                  </div>
 
                   <ul className="flex flex-col gap-1">
                     {exp.tasks.map((task, j) => (
