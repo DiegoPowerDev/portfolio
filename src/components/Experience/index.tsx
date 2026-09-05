@@ -18,10 +18,10 @@ const experiences: Experience[] = [
     duration: "Apr 2026 – Jul 2026",
     location: "Houston, TX",
     tasks: [
-      "Led Gutenberg migration and optimization across high-traffic marketing pages",
-      "Improved Core Web Vitals, performance scores and SEO rankings",
-      "Built VR landing pages and interactive experiences for oil & gas clients",
-      "Collaborated remotely in an Agile environment with a US-based team",
+      "Took ownership of a poorly performing website with unresolved SEO issues and significantly improved Core Web Vitals, page speed, and search visibility",
+      "Designed and developed new Industry sections (Logistics, Construction, Manufacturing, Chemical, Oil & Gas) from scratch",
+      "Built interactive training modules including Emergency on Rig Site, Coil Tubing, and Risks & Hazards, with 4 practical exercises per module",
+      "Automated the production deployment process and resolved critical issues related to custom themes, improving the release workflow",
     ],
   },
   {
@@ -31,8 +31,10 @@ const experiences: Experience[] = [
     duration: "Oct 2025 – Mar 2026",
     location: "Peru",
     tasks: [
-      "Led SEO and performance optimization initiatives",
-      "Developed dynamic features and maintained scalable platforms",
+      "Managed and improved 7 websites with severe performance and SEO problems",
+      "Redesigned key pages, created new sections, and significantly reduced the number of plugins to improve speed and maintainability",
+      "Led the complete optimization of Bidmont Villa (hotel website): managed Google Ads campaigns, configured Google Analytics, and increased organic traffic.",
+      "Implemented WooCommerce with OpenPay payment integration and successfully migrated multiple sites from Elementor to Gutenberg",
     ],
   },
   {
@@ -42,9 +44,10 @@ const experiences: Experience[] = [
     duration: "May 2025 – Aug 2025",
     location: "Peru",
     tasks: [
-      "Built scalable web solutions with Next.js, Firebase and WordPress",
-      "Implemented CI/CD pipelines and cloud deployments",
-      "Improved application performance and user experience",
+      "Led a small full-stack development team responsible for two production websites built with Next.js and Laravel",
+      "Developed new sections and fixed critical error handling issues in backend API requests",
+      "Implemented automated email sending using cron jobs",
+      "Set up a continuous deployment pipeline by connecting GitHub to Hostinger, enabling automatic production deployments from a dedicated “production” branch",
     ],
   },
 ];

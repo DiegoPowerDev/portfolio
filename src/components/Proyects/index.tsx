@@ -18,52 +18,75 @@ interface Project {
 }
 const projects: Project[] = [
   {
-    name: "TrainBeyond",
-    image: "/trainbeyond.webp",
-    problem:
-      "Outdated site structure with underperforming SEO and Core Web Vitals",
-    role: "Web Programmer (Contractor)",
-    stack: ["WordPress", "Gutenberg", "SEO", "Performance"],
-    result:
-      "Full site revamp: new sections, blog content, improved SEO and Core Web Vitals scores",
-    liveUrl: "https://trainbeyond.com",
-  },
-  {
     name: "Image Library Platform",
     image: "/image-library.webp",
-    problem: "Disorganized asset management for marketing teams",
+    problem:
+      "Marketing teams struggled with disorganized asset management and lacked a clear way to plan content.",
     role: "Full Stack Developer",
     stack: ["Next.js", "TypeScript", "Firebase", "Cloudinary"],
-    result: "Real-time collaboration with an integrated events calendar",
+    result:
+      "Built a complete platform with real-time collaboration and an integrated content calendar, improving organization and workflow efficiency for marketing teams.",
     liveUrl: "https://imagelibrarydev.vercel.app",
     githubUrl: "https://github.com/DiegoPowerDev/image-library",
   },
   {
     name: "FastPDFMaster",
     image: "/fast-pdf.webp",
-    problem: "Slow and unreliable PDF editing workflows",
+    problem:
+      "Existing PDF tools were slow and unreliable for everyday editing tasks.",
     role: "Full Stack Developer",
-    stack: ["Next.js", "Adobe Acrobat API", "Cloudflare R2", "Tailwind"],
-    result: "Excellent Core Web Vitals thanks to server-side rendering",
+    stack: [
+      "Next.js",
+      "Adobe Acrobat API",
+      "Cloudflare R2",
+      "Tailwind",
+      "TypeScript",
+    ],
+    result:
+      "Developed a fast, server-rendered PDF tool with strong Core Web Vitals performance and a clean user experience.",
     liveUrl: "https://fastpdfmaster.vercel.app",
     githubUrl: "https://github.com/DiegoPowerDev/PDF-Master-Editor",
   },
   {
+    name: "TrainBeyond",
+    image: "/trainbeyond.webp",
+    problem:
+      "The existing website had outdated structure, poor performance, and weak SEO.",
+    role: "Web Developer (Remote Contractor – US)",
+    stack: ["WordPress", "JavaScript", "SEO", "Performance Optimization"],
+    result:
+      "Redesigned and optimized key pages, improved Core Web Vitals and SEO, and delivered interactive experiences for a US-based Oil & Gas company while working remotely in an Agile team.",
+    liveUrl: "https://trainbeyond.com",
+  },
+
+  {
     name: "Bidmont Villa",
     image: "/bidmont.webp",
-    problem: "Outdated website with low conversion rate",
+    problem:
+      "The hotel website had poor performance, outdated design, and limited online visibility, affecting both organic traffic and paid campaign results.",
     role: "Frontend & WordPress Developer",
-    stack: ["WordPress", "Gutenberg", "Tailwind", "SEO"],
-    result: "Complete redesign focused on conversion",
+    stack: [
+      "WordPress",
+      "Gutenberg",
+      "WooCommerce",
+      "SEO",
+      "OpenPay",
+      "Google Ads",
+      "Google Analytics",
+    ],
+    result:
+      "Completely redesigned and optimized the website, significantly improving performance and SEO. Implemented WooCommerce with OpenPay payment integration, migrated the site from Elementor to Gutenberg, and managed Google Ads + Google Analytics to increase organic traffic and conversion opportunities.",
     liveUrl: "https://bidmontvilla.com",
   },
   {
     name: "Bantel Perú",
     image: "/bantelperu.webp",
-    problem: "Limited site performance and SEO",
-    role: "Frontend Developer",
-    stack: ["WordPress", "SEO", "Performance"],
-    result: "Substantial improvement in load speed",
+    problem:
+      "The existing website suffered from slow loading times, outdated structure, and weak search engine visibility.",
+    role: "Frontend & WordPress Developer",
+    stack: ["WordPress", "Elementor", "SEO", "Performance"],
+    result:
+      "Redesigned key sections, improved overall performance and Core Web Vitals, reduced unnecessary plugins, and implemented SEO best practices to enhance organic reach and user experience.",
     liveUrl: "https://bantelperu.com",
   },
 ];
@@ -89,7 +112,7 @@ export default function Projects() {
               "hover:border-lime-400/40",
             )}
           >
-            <FadeIn key={project.name} delay={i * 0.1}>
+            <FadeIn className=" flex-1" key={project.name} delay={i * 0.1}>
               <div className="aspect-video max-h-64 bg-neutral-900 flex  justify-center text-neutral-600 text-xs">
                 <Image
                   src={project.image}
@@ -100,7 +123,7 @@ export default function Projects() {
                 />
               </div>
 
-              <div className="flex flex-col gap-2 p-4 flex-1">
+              <div className="flex w-full flex-col gap-2 p-4 flex-1">
                 <div className="flex items-baseline justify-between gap-2">
                   <h3 className="flex items-center gap-2 font-medium text-white text-xl">
                     <span>

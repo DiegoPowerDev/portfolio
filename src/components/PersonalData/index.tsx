@@ -18,6 +18,9 @@ export default function PersonalData() {
         <span className="text-sm font-mono font-bold text-lime-500 tracking-wide">
           Full Stack Developer
         </span>
+        <span className="text-sm p-1 w-fit uppercase rounded font-bold bg-lime-500 tracking-wide text-black">
+          Open to remote Frontend / React roles
+        </span>
 
         <h1 className="text-5xl sm:text-6xl font-medium tracking-tight text-white">
           DIEGO TORRES
@@ -48,9 +51,11 @@ export default function PersonalData() {
           </div>
         </div>
         <p className="py-4 text-neutral-300 leading-relaxed max-w-md">
-          Full Stack Developer specialized in building fast, secure and scalable
-          web applications. Remote contractor for TrainBeyond (Oil & Gas, USA),
-          focused on performance, SEO and exceptional user experiences.
+          Frontend Developer focused on React and Next.js, with solid experience
+          building responsive, performant web applications. I also have strong
+          WordPress skills and have worked remotely with US clients, delivering
+          clean code, good UX and measurable improvements in performance and
+          SEO.
         </p>
 
         <div className="flex flex-wrap gap-3 items-center">
