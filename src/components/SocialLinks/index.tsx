@@ -21,7 +21,7 @@ const links: LinksInterface[] = [
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/diego-arturo-torres-pacherres-440423242/",
+    url: "https://www.linkedin.com/in/diego-torres-developer",
     image: (
       <IconBrandLinkedinFilled className="h-10 w-10 hover:scale-125 duration-300" />
     ),
