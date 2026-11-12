@@ -28,7 +28,7 @@ const experiences: Experience[] = [
     name: "Consorcio DHMont",
     role: "Web Programmer",
     image: "/Consorciodhmont.webp",
-    duration: "Oct 2025 – Oct 2026",
+    duration: "Oct 2025 – Present",
     location: "Peru",
     tasks: [
       "Managed and improved 7 websites with severe performance and SEO problems",

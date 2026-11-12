@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import content from "@/content/content.json";
 import { Analytics } from "@vercel/analytics/next";
-import MeshGradient from "@/components/animations/gradient";
 import { Toaster } from "react-hot-toast";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
@@ -48,9 +47,8 @@ export default function RootLayout({
       </head>
 
       <body
-        className={`antialiased w-full overflow-x-hidden flex flex-col bg-[#0B0E12] text-white`}
+        className={`antialiased w-full overflow-x-hidden flex flex-col bg-[#0b120e] text-white`}
       >
-        <MeshGradient />
         {children}
         <Toaster />
       </body>
